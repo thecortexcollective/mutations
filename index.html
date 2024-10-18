@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>mutation(s)</title>
+    </head>
+    <style>
+        body {
+            background-color: black;
+            font-family: monospace;
+            color: white;
+        }
+
+        #navbar {
+            display: flex;
+        }
+
+        #cortex {
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex; 
+            gap: 5px; 
+        }
+
+        btn {
+            border-style: outset;
+            border-width: 2px;
+            border-color: white; 
+            margin-left: 2px;
+            transition: background-color 0.5s;
+        }
+
+        btn:hover {
+            color: black;
+            background-color: white;
+            cursor: pointer; 
+            border-style: inset;
+        }
+
+        @media screen and (max-width: 480px) {
+            nav, #navbar {
+                flex-direction: column;
+                gap: 5px; 
+            }
+        }
+
+    </style>
+    <body>
+        <div id="navbar">
+            <div id="cortex">cortex</div>
+            <nav>
+                <btn href="">about us</btn>
+                <btn href="">homepage</btn>
+                <btn href="">events</btn>
+                <btn href="">contact</btn>
+            </nav> 
+
+        </div>
+
+    </body>
+    <script>
+
+    </script>
+</html>
