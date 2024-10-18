@@ -11,9 +11,16 @@
             background-color: black;
             font-family: monospace;
             color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #navbar {
+            position: fixed;
+            top: 10px;
+            left: 10px;
             display: flex;
         }
 
@@ -31,7 +38,7 @@
             border-width: 2px;
             border-color: white; 
             margin-left: 2px;
-            transition: background-color 0.5s;
+            transition: background-color 0.5s, color 0.5s;
         }
 
         btn:hover {
@@ -43,8 +50,14 @@
 
         @media screen and (max-width: 480px) {
             nav, #navbar {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 gap: 5px; 
+            }
+            #navbar {
+                position: fixed; 
+                right: 10px;
+                bottom: 50px; 
+                left: auto; 
             }
         }
 
@@ -58,9 +71,8 @@
                 <btn href="">events</btn>
                 <btn href="">contact</btn>
             </nav> 
-
         </div>
-
+        <img src="wave.png">
     </body>
     <script>
 
