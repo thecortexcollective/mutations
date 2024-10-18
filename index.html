@@ -9,6 +9,10 @@
     <style>
         body {
             background-color: black;
+            background-image: url('/images/web/base.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position-y: -120%;
             font-family: monospace;
             color: white;
             height: 100vh;
@@ -59,6 +63,25 @@
                 bottom: 50px; 
                 left: auto; 
             }
+            body {
+                background-image: url('/images/mobile/base.png');
+                background-size: 100% 100%;
+            }
+        }
+        @media screen and (min-width: 480px) and (max-width: 580px) {
+            body {
+                background-position-y: -35%;
+            }
+        }
+        @media screen and (min-width: 580px) and (max-width: 650px) {
+            body {
+                background-position-y: -70%;
+            }
+        }
+        @media screen and (min-width: 650px) and (max-width: 750px) {
+            body {
+                background-position-y: -70%;
+            }
         }
 
     </style>
@@ -72,7 +95,6 @@
                 <btn href="">contact</btn>
             </nav> 
         </div>
-        <img src="wave.png">
     </body>
     <script>
 
