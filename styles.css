@@ -60,6 +60,7 @@
     display: none;
 }
 #player {
+    font-family: monospace; /* so that the em works bruh */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -161,6 +162,10 @@ h3 {
     top: 10px;
     left: 10px;
     display: flex;
+}
+
+#pdf-box {
+    margin: 10px 0px;
 }
 
 #filler {
