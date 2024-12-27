@@ -5,122 +5,10 @@
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>mutation(s)</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
-    <style>
-        body {
-            background-color: black;
-            background-image: url('/images/web/base.png');
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position-y: -120%;
-            font-family: monospace;
-            color: white;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #navbar {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            display: flex;
-        }
-
-        #cortex {
-            margin-right: 20px;
-        }
-
-        nav {
-            display: flex; 
-            gap: 5px; 
-        }
-
-        .mobilelong {
-            width: 1px;
-            height: 300px;
-            left: 30px;
-            top: 50px;
-        }
-
-        .mobiletop {
-            width: 170px;
-            height: 1px;
-            left: 30px;
-            top: 50px;
-        }
-
-        .mobilebottom {
-            height: 1px;
-            width: 100px;
-            left: 30px;
-            top: 350px
-        }
-
-        #container {
-            position: absolute;
-            top: 50px;
-            left: 30px;
-            padding: 10px;
-            width: 150px;
-            font-size: 11px;
-        }
-
-        .line {
-            background-color: white;
-            position: absolute;
-        }
-
-        btn {
-            border-style: outset;
-            border-width: 2px;
-            border-color: white; 
-            margin-left: 2px;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        btn:hover {
-            color: black;
-            background-color: white;
-            cursor: pointer; 
-            border-style: inset;
-        }
-
-        @media screen and (max-width: 480px) {
-            nav, #navbar {
-                flex-direction: column-reverse;
-                gap: 5px; 
-            }
-            #navbar {
-                position: fixed; 
-                right: 10px;
-                bottom: 50px; 
-                left: auto; 
-            }
-            body {
-                background-image: url('/images/mobile/base (4).png');
-                background-size: 100% 100%;
-            }
-        }
-        @media screen and (min-width: 480px) and (max-width: 580px) {
-            body {
-                background-position-y: -35%;
-            }
-        }
-        @media screen and (min-width: 580px) and (max-width: 650px) {
-            body {
-                background-position-y: -70%;
-            }
-        }
-        @media screen and (min-width: 650px) and (max-width: 750px) {
-            body {
-                background-position-y: -70%;
-            }
-        }
-
-    </style>
     <body>
+        <div id="bgimg"></div>
         <div id="navbar">
             <div id="cortex">cortex</div>
             <nav>
@@ -152,6 +40,10 @@
 
 
         </div>
+        <footer>
+            <a href="https://www.instagram.com/cortexyale/">
+                <h3>the cortex collective</h3></a>
+        </footer>
     </body>
     <script>
 

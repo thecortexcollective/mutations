@@ -1,0 +1,238 @@
+/* FONTS */
+@font-face {
+    font-family: 'Playfair';
+    src: url('fonts/playfair/regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: url('fonts/playfair/bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: url('fonts/playfair/black.woff') format('woff');
+    font-weight: bolder;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: url('fonts/playfair/italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: url('fonts/playfair/bold_italic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Playfair';
+    src: url('fonts/playfair/black_italic.woff') format('woff');
+    font-weight: bolder;
+    font-style: italic;
+}
+
+/* AUDIO */
+.remove {
+    position: absolute;
+    left: -999em;
+}
+.pause {
+    background-position: 0 -100%;
+}
+.hide { 
+    display: none;
+}
+#player {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid white;
+    height: 2em;
+    margin: 1.5em auto;
+    background-image: url('images/dna.png');
+    background-size: contain;
+    /* filter: grayscale(100%) */
+}
+#playpause {
+    width: 25px;
+    height: 25px;
+    cursor: pointer; 
+    background-color: rgba(0, 0, 0, 1);
+    border-right: 1px solid white; 
+    padding: 0px 10px;
+}
+#playpause img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+}
+#progress {
+    height: 100%;
+    width: 70px;
+    border-right: 5px double white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* STYLES */
+
+body {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: -120%;
+    font-family: monospace;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#bgimg {
+    background-image: url('/images/web/base.png');
+    background-size: cover;
+    background-position: left;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+}
+
+h1 {
+    font-family: 'Playfair', serif;
+    font-size: 25px;
+    margin: 20;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Playfair', serif;
+    font-size: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#navbar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 50%; 
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+}
+
+#cortex {
+    margin-right: 20px;
+}
+
+nav {
+    display: flex; 
+    gap: 5px; 
+}
+
+.mobilelong {
+    width: 1px;
+    height: 300px;
+    left: 30px;
+    top: 50px;
+}
+
+.mobiletop {
+    width: 170px;
+    height: 1px;
+    left: 30px;
+    top: 50px;
+}
+
+.mobilebottom {
+    height: 1px;
+    width: 100px;
+    left: 30px;
+    top: 350px
+}
+
+#container {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    padding: 10px;
+    width: 150px;
+    font-size: 11px;
+}
+
+.line {
+    background-color: white;
+    position: absolute;
+}
+
+btn {
+    border-style: outset;
+    border-width: 2px;
+    border-color: white; 
+    margin-left: 2px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+btn:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer; 
+    border-style: inset;
+}
+
+@media screen and (max-width: 480px) {
+    nav, #navbar {
+        flex-direction: column-reverse;
+        gap: 5px; 
+    }
+    #navbar {
+        position: fixed; 
+        right: 10px;
+        bottom: 50px; 
+        left: auto; 
+    }
+    #bgimg {
+        background-image: url('/images/mobile/base (4).png');
+        background-size: 100% 100%;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 580px) {
+    body {
+        background-position-y: -35%;
+    }
+}
+@media screen and (min-width: 580px) and (max-width: 650px) {
+    body {
+        background-position-y: -70%;
+    }
+}
+@media screen and (min-width: 650px) and (max-width: 750px) {
+    body {
+        background-position-y: -70%;
+    }
+}
