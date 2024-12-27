@@ -35,6 +35,18 @@
     font-weight: bolder;
     font-style: italic;
 }
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/inconsolata/regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('fonts/inconsolata/bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
 
 /* AUDIO */
 .remove {
@@ -89,11 +101,11 @@
 /* STYLES */
 
 body {
-    background-color: black;
+    background-color: rgba(20,20,21,255);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position-y: -120%;
-    font-family: monospace;
+    font-family: 'Inconsolata', monospace;
     color: white;
     height: 100vh;
     display: flex;
@@ -149,6 +161,10 @@ h3 {
     top: 10px;
     left: 10px;
     display: flex;
+}
+
+#filler {
+    height: 50px;
 }
 
 footer {
@@ -212,7 +228,9 @@ btn {
     border-style: outset;
     border-width: 2px;
     border-color: white; 
+    background-color: black;
     margin-left: 2px;
+    box-shadow: 0px 0px 5px 0px black;  
     transition: background-color 0.5s, color 0.5s;
 }
 
