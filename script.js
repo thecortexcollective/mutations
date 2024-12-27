@@ -5,14 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const writtens = document.querySelectorAll('.written');
     const pdfBox = document.getElementById('pdf-box'); 
+    const nav = document.getElementById('nav');
     
     writtens.forEach(button => {
         button.addEventListener('click', (event) => {
-            const buttonId = event.target.id;
-            const clicked = button.dataset.clicked === "true";
-            button.dataset.clicked = clicked ? "false" : "true";
 
-            if (button.dataset.clicked === "true"){
+            // unclick all other buttons
+            writtens.forEach(otherButton => {
+                if (otherButton !== button && otherButton !== nav) {
+                    otherButton.dataset.clicked = "false"; 
+                    otherButton.style.color = "white"; 
+                    otherButton.style.backgroundColor = "black";
+                    otherButton.style.borderStyle = "outset";
+                    otherButton.style.boxShadow = "none";
+                }
+            });
+
+            // click this button
+            const buttonId = event.target.id;
+            const clicked = event.target.dataset.clicked === "true";
+            event.target.dataset.clicked = clicked ? "false" : "true";
+
+            if (event.target.dataset.clicked === "true"){
                 switch (buttonId) {
                     case 'nonfiction':
                         pdfBox.innerHTML = `
@@ -37,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.target.style.color = "black";
                 event.target.style.backgroundColor = "white";
                 event.target.style.borderStyle = "inset";
+                event.target.style.boxShadow = "0 0 10px inset black";
             } else {
                 pdfBox.innerHTML = `<p>
                         Nonfiction: <i>What Does it Mean to Take?</i>
@@ -48,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.target.style.color = "white";
                 event.target.style.backgroundColor = "black";
                 event.target.style.borderStyle = "outset";
+                event.target.style.boxShadow = "none";
             }
         });
     });
