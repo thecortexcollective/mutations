@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ** change the progress bar width based on the audio current time **
     const audio = document.getElementById('audio');
     const progress = document.getElementById('progress');
+    const progressContainer = document.getElementById('progress-container');
     let isDragging = false;
     
     audio.addEventListener('timeupdate', () => {
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ** make the progress bar change the audio current time **
     const calculateProgress = (event) => {
-        const rect = progress.parentElement.getBoundingClientRect();
+        const rect = progressContainer.getBoundingClientRect();
         const offsetX = event.clientX - rect.left;
         const percentage = Math.max(0, Math.min(1, offsetX / rect.width));
         return percentage;

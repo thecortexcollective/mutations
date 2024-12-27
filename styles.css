@@ -73,9 +73,14 @@
 }
 #progress {
     height: 100%;
-    width: 70px;
+    width: 0;
     border-right: 5px double white;
     background-color: rgba(0, 0, 0, 0.5);
+}
+#progress-container {
+    width: 100%; height: 100%; 
+    background-color: rgb(255, 192, 203, 0.3); 
+    position: relative;
 }
 
 
