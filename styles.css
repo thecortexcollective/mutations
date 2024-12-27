@@ -242,8 +242,8 @@ btn {
 btn:hover {
     color: black;
     background-color: white;
-    cursor: pointer; 
     border-style: inset;
+    cursor: pointer; 
 }
 
 @media screen and (max-width: 480px) {

@@ -5,25 +5,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const writtens = document.querySelectorAll('.written');
     const pdfBox = document.getElementById('pdf-box'); 
+    
     writtens.forEach(button => {
         button.addEventListener('click', (event) => {
             const buttonId = event.target.id;
-            switch (buttonId) {
-            case 'nonfiction':
-                pdfBox.innerHTML = `
-                    This is the nonfiction piece.
-                `; 
-                break;
-            case 'fiction':
-                pdfBox.innerHTML = `
-                    This is the fiction piece.   
-                `; 
-                break;
-            case 'poetry':
-                pdfBox.innerHTML = `
-                    This is the poetry piece.`; 
-                break;
-            default:
+            const clicked = button.dataset.clicked === "true";
+            button.dataset.clicked = clicked ? "false" : "true";
+
+            if (button.dataset.clicked === "true"){
+                switch (buttonId) {
+                    case 'nonfiction':
+                        pdfBox.innerHTML = `
+                            Make the nonfiction pdf an image,
+                            and display it here.
+                        `; 
+                        break;
+                    case 'fiction':
+                        pdfBox.innerHTML = `
+                            Make the fiction pdf an image,
+                            and display it here.   
+                        `; 
+                        break;
+                    case 'poetry':
+                        pdfBox.innerHTML = `
+                            Make the poetry pdf an image,
+                            and display it here.
+                        `; 
+                        break;
+                    default:
+                }
+                event.target.style.color = "black";
+                event.target.style.backgroundColor = "white";
+                event.target.style.borderStyle = "inset";
+            } else {
+                pdfBox.innerHTML = `<p>
+                        Nonfiction: <i>What Does it Mean to Take?</i>
+                        by Max Kiekhofer.<br>
+                        Fiction: <i>Wildfire</i> by Kane Trundle.<br>
+                        Poetry: <i>Striga</i> by Mara Klein.
+                    </p>
+                `;
+                event.target.style.color = "white";
+                event.target.style.backgroundColor = "black";
+                event.target.style.borderStyle = "outset";
             }
         });
     });
