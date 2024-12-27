@@ -78,6 +78,9 @@
     background-color: rgba(0, 0, 0, 1);
     border-right: 1px solid white; 
     padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #playpause img {
     width: 100%;
@@ -132,9 +135,23 @@ a {
     left: 0; 
 }
 
+/* #bgimg-glitch {
+    background-image: url('/images/glitch-bg.gif');
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: grayscale(80%);
+    opacity: 0.8;
+} */
+
 main {
     max-width: 400px;
     margin: 0px 20px;
+    position: relative;
 }
 
 main img {
@@ -159,9 +176,19 @@ h3 {
 
 #navbar {
     position: fixed;
-    top: 10px;
+    transform: rotate(-90deg);
+    top: 300px;
     left: 10px;
     display: flex;
+    gap: 5px; 
+    z-index: 2;
+}
+
+nav {
+    display: flex; 
+    flex-direction: row;
+    gap: 5px; 
+    z-index: 3;
 }
 
 #pdf-box {
@@ -187,11 +214,6 @@ footer {
 
 #cortex {
     margin-right: 20px;
-}
-
-nav {
-    display: flex; 
-    gap: 5px; 
 }
 
 .mobilelong {
@@ -253,6 +275,7 @@ btn:hover {
     }
     #navbar {
         position: fixed; 
+        transform: none;
         right: 10px;
         bottom: 50px; 
         left: auto; 
