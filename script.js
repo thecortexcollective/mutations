@@ -1,11 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ** change the progress bar width based on the audio current time **
     const audio = document.getElementById('audio');
+    const playPause = document.getElementById('play-pause'); 
     const progress = document.getElementById('progress');
     const progressContainer = document.getElementById('progress-container');
     let isDragging = false;
+
+    // ** toggle play/pause button **
+    playPause.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPause.classList.add('playing');
+        } else {
+            audio.pause();
+            playPause.classList.remove('playing');
+        }
+    }); 
+
+    audio.addEventListener('play', () => {
+        playPause.classList.add('playing');
+    }); 
+
+    audio.addEventListener('pause', () => {
+        playPause.classList.remove('playing');
+    }); 
     
+    // ** change the progress bar width based on the audio current time **
     audio.addEventListener('timeupdate', () => {
         if (!isDragging && audio.duration) {
             const progressPercentage = (audio.currentTime / audio.duration) * 100;
@@ -26,14 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return percentage;
     };
 
-    progress.addEventListener('mousedown', (event) => {
+    progressContainer.addEventListener('mousedown', (event) => {
         isDragging = true;
-        updateProgress(calculateProgress(event));
+        const percentage = calculateProgress(event);
+        updateProgress(percentage);
     }); 
 
     document.addEventListener('mousemove', (event) => {
         if (isDragging) {
-            updateProgress(calculateProgress(event));
+            const percentage = calculateProgress(event);
+            updateProgress(percentage);
         }
     });
 
