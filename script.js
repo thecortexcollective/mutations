@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const audio = document.getElementById('audio');
-    const playPause = document.getElementById('play-pause'); 
+    const audio = document.getElementById('sound');
+    const playPause = document.getElementById('playpause'); 
     const progress = document.getElementById('progress');
     const progressContainer = document.getElementById('progress-container');
     let isDragging = false;
@@ -14,6 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             audio.pause();
             playPause.classList.remove('playing');
+        }
+    }); 
+
+    // also play/pause with space bar
+    document.addEventListener('keydown', (event) => {
+        if (event.code === 'Space') {
+            if (audio.paused) {
+                audio.play();
+                playPause.classList.add('playing');
+            } else {
+                audio.pause();
+                playPause.classList.remove('playing');
+            }
         }
     }); 
 
@@ -36,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // reset
     audio.addEventListener('ended', () => {
         progress.style.width = '0%';
+        audio.play() // loop
     });
 
     // ** make the progress bar change the audio current time **
