@@ -101,7 +101,6 @@
     position: relative;
 }
 
-
 /* STYLES */
 
 body {
@@ -133,28 +132,11 @@ a {
     top: -100px;
 }
 
-/* #bgimg-glitch {
-    background-image: url('/images/glitch-bg.gif');
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-    z-index: -5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    filter: grayscale(80%);
-    opacity: 0.8;
-} */
-
 main {
-    width: 400px;
+    max-width: 400px;
     min-height: 100vh;
     margin: 0px 20px;
     position: relative;
-}
-
-.index {
-    min-width: 400px;
 }
 
 main img {
@@ -162,14 +144,12 @@ main img {
     height: auto;
     border: 2px solid white;
 }
-
 h1 {
     font-family: 'Playfair', serif;
     font-size: 25px;
     margin: 20px 0px;
     text-align: center;
 }
-
 h3 {
     font-family: 'Playfair', serif;
     font-size: 20px;
@@ -179,9 +159,6 @@ h3 {
 
 #navbar {
     position: fixed;
-    transform: rotate(-90deg);
-    top: 300px;
-    left: calc(50vw - 400px);
     display: flex;
     gap: 5px; 
     z-index: 2;
@@ -189,7 +166,6 @@ h3 {
 
 nav {
     display: flex; 
-    flex-direction: row;
     gap: 5px; 
     z-index: 3;
 }
@@ -197,11 +173,9 @@ nav {
 #pdf-box {
     margin: 10px 0px;
 }
-
 #filler {
     height: 50px;
 }
-
 footer {
     position: fixed;
     bottom: 0px;
@@ -214,32 +188,28 @@ footer {
     margin: 10px;
     width: 100%;
 }
-
 #cortex {
     margin-right: 20px;
 }
 
-.mobilelong {
+/* .mobilelong {
     width: 1px;
     height: 300px;
     left: 30px;
     top: 50px;
 }
-
 .mobiletop {
     width: 170px;
     height: 1px;
     left: 30px;
     top: 50px;
 }
-
 .mobilebottom {
     height: 1px;
     width: 100px;
     left: 30px;
     top: 350px
 }
-
 #container {
     position: absolute;
     top: 50px;
@@ -248,11 +218,10 @@ footer {
     width: 150px;
     font-size: 11px;
 }
-
 .line {
     background-color: white;
     position: absolute;
-}
+} */
 
 btn {
     border-style: outset;
@@ -263,7 +232,6 @@ btn {
     box-shadow: 0px 0px 5px 0px black;  
     transition: background-color 0.5s, color 0.5s;
 }
-
 btn:hover {
     color: black !important;
     background-color: white !important;
@@ -274,17 +242,24 @@ btn:hover {
 @media screen and (max-width: 600px) {
     nav, #navbar {
         flex-direction: column-reverse;
-        gap: 5px; 
     }
     #navbar {
-        position: fixed; 
-        transform: none;
         right: 10px;
         bottom: 50px; 
         left: auto; 
     }
+}
+
+@media screen and (min-width: 600px){
+    nav, #navbar {
+        flex-direction: row;
+    }
+    #navbar {
+        transform: rotate(-90deg);
+        top: 300px;
+        left: calc(50vw - 400px);
+    }
     main {
-        max-width: 400px;
-        width: auto !important; 
+        width: 400px;
     }
 }
