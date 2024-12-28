@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     otherButton.style.color = "white"; 
                     otherButton.style.backgroundColor = "black";
                     otherButton.style.borderStyle = "outset";
-                    otherButton.style.boxShadow = "none";
                 }
             });
 
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.target.style.color = "black";
                 event.target.style.backgroundColor = "white";
                 event.target.style.borderStyle = "inset";
-                event.target.style.boxShadow = "0 0 10px inset black";
             } else {
                 pdfBox.innerHTML = `<p>
                         Nonfiction: <i>What Does it Mean to Take?</i>
@@ -63,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.target.style.color = "white";
                 event.target.style.backgroundColor = "black";
                 event.target.style.borderStyle = "outset";
-                event.target.style.boxShadow = "none";
             }
         });
     });
