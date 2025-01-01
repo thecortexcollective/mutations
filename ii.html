@@ -8,7 +8,10 @@
 </head>
 <body>
     <div id="navbar">
-        <div id="cortex">cortex</div>
+        <div id="cortex">
+            <a href="https://www.instagram.com/cortexyale/">
+            cortex</a>
+        </div>
         <nav>
             <btn href="">about us</btn>
             <btn href="">homepage</btn>
@@ -39,25 +42,37 @@
             something something something something.</p>
         <div>
             <nav style="flex-direction: row;" id="written-nav">
-                <btn class="written" id="nonfiction" data-clicked="false">nonfiction</btn>
-                <btn class="written" id="fiction" data-clicked="false">fiction</btn>
-                <btn class="written" id="poetry" data-clicked="false">poetry</btn>
+                <btn class="written" id="i" data-clicked="false">i</btn>
+                <btn class="written" id="ii" data-clicked="false">ii</btn>
+                <btn class="written" id="iii" data-clicked="false">iii</btn>
             </nav> 
         </div>
         <div id="pdf-box">
             <p>
-                Nonfiction: <i>What Does it Mean to Take?</i>
+                i. <i>What Does it Mean to Take?</i>
                 by Max Kiekhofer.<br>
-                Fiction: <i>Wildfire</i> by Kane Trundle.<br>
-                Poetry: <i>Striga</i> by Mara Klein.
+                ii. <i>Wildfire</i> by Kane Trundle.<br>
+                iii. <i>Striga</i> by Mara Klein.
             </p>
         </div>
         <div id="filler"></div>
     </main>
     <footer>
-        <a href="https://www.instagram.com/cortexyale/">
-            <h3>the cortex collective</h3></a>
+        <a href="cortexmagazine.github.io/mutations" target="_blank">
+            <h3>mutation(s)</h3></a>
     </footer>
+    <script>
+        const written_descrips = `<p>
+                        i. <i>What Does it Mean to Take?</i>
+                        by Max Kiekhofer.<br>
+                        ii. <i>Wildfire</i> by Kane Trundle.<br>
+                        iii. <i>Striga</i> by Mara Klein.
+                    </p>`;
+        const path_to_i = `maxk-img`;
+        const path_to_ii = `kane-img`;
+        const path_to_iii = `mara-img`;
+        const path_to_iv = ``;
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

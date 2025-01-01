@@ -27,22 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (event.target.dataset.clicked === "true"){
                 switch (buttonId) {
-                    case 'nonfiction':
+                    case 'i':
                         pdfBox.innerHTML = `
-                            Make the nonfiction pdf an image,
-                            and display it here.
+                            <img class="pdf" src="${path_to_i}">
                         `; 
                         break;
-                    case 'fiction':
+                    case 'ii':
                         pdfBox.innerHTML = `
-                            Make the fiction pdf an image,
-                            and display it here.   
+                            <img class="pdf" src="${path_to_ii}">
                         `; 
                         break;
-                    case 'poetry':
+                    case 'iii':
                         pdfBox.innerHTML = `
-                            Make the poetry pdf an image,
-                            and display it here.
+                            <img class="pdf" src="${path_to_iii}">
+                        `; 
+                        break;
+                    case 'iv':
+                        pdfBox.innerHTML = `
+                            <img class="pdf" src="${path_to_iv}">
                         `; 
                         break;
                     default:
@@ -51,13 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.target.style.backgroundColor = "white";
                 event.target.style.borderStyle = "inset";
             } else {
-                pdfBox.innerHTML = `<p>
-                        Nonfiction: <i>What Does it Mean to Take?</i>
-                        by Max Kiekhofer.<br>
-                        Fiction: <i>Wildfire</i> by Kane Trundle.<br>
-                        Poetry: <i>Striga</i> by Mara Klein.
-                    </p>
-                `;
+                pdfBox.innerHTML = written_descrips;
                 event.target.style.color = "white";
                 event.target.style.backgroundColor = "black";
                 event.target.style.borderStyle = "outset";

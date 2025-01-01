@@ -173,6 +173,11 @@ nav {
 #pdf-box {
     margin: 10px 0px;
 }
+#pdf {
+    width: 500px;
+    height: 500px;
+    border: 2px solid white; 
+}
 #filler {
     height: 50px;
 }
