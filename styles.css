@@ -140,6 +140,11 @@ a {
 
 .statement-holder {
     margin-top: -20px;
+    margin-bottom: 1em; 
+}
+
+.statement {
+    display: none; 
 }
 
 .equals-sign {

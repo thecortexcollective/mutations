@@ -8,14 +8,60 @@
 </head>
 <script>
     const i_short = 
-        `<i>What Does it Mean to Take?</i> by Max Kiekhofer
-        explores the concept of taking... `;
+        `<div class="statement-holder">
+            <br><br>
+            <button id="i-button" onclick="toggle('i-statement');">
+                <i>What Does it Mean to Take?</i> by Max Kiekhofer
+            </button>
+            <p class="statement" id="i-statement">
+                Max's description goes here.
+            </p>
+        </div>`;
     const ii_short = 
-        `<i>Wildfire</i> by Kane Trundle demonstrates how humans have
-        taken more than they give... `;
+        `<div class="statement-holder">
+            <br><br>
+            <button id="ii-button" onclick="toggle('ii-statement');">
+                <i>Wildfire</i> by Kane Trundle
+            </button>
+            <p class="statement" id="ii-statement">
+                Humans have taken more than they give. This imbalance
+                has directly led to the destruction of Earth's ecosystems
+                and the extinction of countless species. Clearly the
+                perception of humans as inherently selfish creatures -
+                parasites feeding upon the earth - certainly has validity.
+                Yet, I argue that this perception doesn't have to be fixed.
+                As Sadie shows us through her mutation, humans are capable
+                of great acts of sacrifice and selflessness - if only we
+                have the courage and willingness to do so. Wake up, dear
+                reader. You and I have power, power to wield the flame that
+                burns and regrows - to change the future, to change the world.
+            </p>
+        </div>`;
     const iii_short = 
-        `<i>Striga</i> by Mara Klein is a parasitic flower that infects
-        cereal crops... `;
+        `<div class="statement-holder">
+            <br><br>
+            <button id="iii-button" onclick="toggle('iii-statement');">
+                <i>Striga</i> by Mara Klein
+            </button>
+            <p class="statement" id="iii-statement">
+                As a stereotypical EVST major, I first encountered
+                <i>Striga hermonthica</i> down a rabbit hole of frenzied
+                botanical research. My spiral resulted in an obscene
+                amount of open Wikipedia tabs and this poem. Striga is
+                a parasitic flower that infects cereal crops. Its roots
+                scour the surrounding soil until it encounters the roots
+                of its host; it then secretes digestive enzymes, making
+                the host bleed out quinone compounds from its damaged tissue.
+                When it senses a sufficient quinone concentration, Striga
+                releases a haustorium, a root-like structure that penetrates
+                the host and siphons away nutrients and energy. During my
+                research, I was struck by Striga's common name: witchweed.
+                In this piece, I wanted to explore the social distortion of
+                femininity and the connotations of consumption and mutation.
+                I hope that it will provoke readers to be aware of subtle
+                manifestations of misogyny throughout history.
+            </p>
+        </div>`;
     const iv_short = ``;
 
     const written_descrips = `<p>
@@ -28,6 +74,12 @@
     const path_to_ii = `pdfs/kane.png`;
     const path_to_iii = `pdfs/mara.png`;
     const path_to_iv = ``;
+
+    // TOGGLE VISIBILITY BY ID
+    function toggle(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }; 
 </script>
 <style>
     /* #music:hover::after {
@@ -79,30 +131,48 @@
         </audio>
         <div class="statement-holder">
             <div class="equals-sign"></div>
-            <button id="music-button" data-clicked="false">
+            <button id="music-button" onclick="toggle('music');">
                 <i>Parisitosis</i> by Diana Omar
             </button>
             <p class="statement" id="music">
                 <i>Parisitosis</i> captures the essence of existence –
-                perception mixed with multiplication.
+                perception mixed with multiplication. As each melody repeats,
+                something small within the piece is changed-- the swaying of the
+                synths, the speed of the tremolo. Small changes are meant to mask
+                the way we see the world. Our perceptions are constantly changing.
+                We mutate according to our surroundings, yet our memories are
+                parasites within our psyches. They involuntarily multiply, and our
+                experiences make us grow stronger.
             </p>
         </div>
-        
 
         <img src="visuals/butterfly.PNG" style="margin-bottom: 17px;">
         <div class="statement-holder">
             <div class="equals-sign"></div>
-            <button id="visart-button" data-clicked="false">
-                <i>The Beholder</i> by Kamryn Davenport
+            <button id="visart-button" onclick="toggle('visart');">
+                <i>Beholder</i> by Kamryn Davenport
             </button>
-            <p class="statement" id="visart">d</p>
+            <p class="statement" id="visart">
+                The mirror, the <i>Beholder</i>, is the manifestation of dysmorphia
+                that lingers in the back of one's mind. With its cracks and
+                infestations, it asks the twisted question: “If beauty is in my
+                eyes, don’t the flaws exist there too?” So, as you look into the
+                Beholder, you are met with a nightmarish version of yourself. A
+                parasitic perception. Monarch butterflies stare into its cracks and
+                find the parasite, ophryocystis elektroscirrha (OE), crumpling their
+                wings, stripping them of a beauty once revered by all. The Beholder
+                inadvertently reflects the ever-changing beauty standards in our
+                world that tell people, especially women, that no matter how
+                beautiful you may be, you’ll never be good enough in their eyes.
+                Don’t look in the eyes of the Beholder.
+            </p>
         </div>
 
         <div>
             <nav style="flex-direction: row;" id="written-nav">
                 <button class="written" id="i" data-clicked="false">i</button>
                 <button class="written" id="ii" data-clicked="false">ii</button>
-                <btn class="written" id="iii" data-clicked="false">iii</btn>
+                <button class="written" id="iii" data-clicked="false">iii</button>
             </nav> 
         </div>
         <div id="pdf-box">
