@@ -30,7 +30,7 @@
     const path_to_iv = ``;
 </script>
 <style>
-    #music:hover::after {
+    /* #music:hover::after {
         content: "perception mixed with multiplication. As each melody repeats, something small within the piece is changed-- the swaying of the synths, the speed of the tremolo. Small changes are meant to mask the way we see the world. Our perceptions are constantly changing. We mutate according to our surroundings, yet our memories are parasites within our psyches. They involuntarily multiply, and our experiences make us grow stronger.";
     }
     #visart:hover::after {
@@ -44,7 +44,7 @@
     }
     #iii-p:hover::after {
         content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
-    }
+    } */
 </style>
 <body>
     <div id="navbar">
@@ -53,10 +53,10 @@
             cortex</a>
         </div>
         <nav>
-            <btn href="">about us</btn>
-            <btn href="">homepage</btn>
-            <btn href="">events</btn>
-            <btn href="">contact</btn>
+            <button href="">about us</button>
+            <button href="">homepage</button>
+            <button href="">events</button>
+            <button href="">contact</button>
         </nav> 
     </div>
     <main>
@@ -73,23 +73,35 @@
                 <div id="progress"></div>
             </div>
         </div>
+
         <audio id="sound" controls preload class="remove">
             <source src="audio/parasitosis.wav" type="audio/wav">
         </audio>
-        <p id="music" style="cursor: pointer;">
-            <i>Parisitosis</i> by Diana Omar captures the
-            essence of existence...
-        </p>
-        <img src="visuals/butterfly.PNG">
-        <p id="visart" style="cursor: pointer;">
-            <i>The Beholder</i> by Kamryn Davenport
-            is a mirror, a manifestation of the dysmorphia that
-            lingers in the back of one's mind... 
-        </p>
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="music-button" data-clicked="false">
+                <i>Parisitosis</i> by Diana Omar
+            </button>
+            <p class="statement" id="music">
+                <i>Parisitosis</i> captures the essence of existence –
+                perception mixed with multiplication.
+            </p>
+        </div>
+        
+
+        <img src="visuals/butterfly.PNG" style="margin-bottom: 17px;">
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="visart-button" data-clicked="false">
+                <i>The Beholder</i> by Kamryn Davenport
+            </button>
+            <p class="statement" id="visart">d</p>
+        </div>
+
         <div>
             <nav style="flex-direction: row;" id="written-nav">
-                <btn class="written" id="i" data-clicked="false">i</btn>
-                <btn class="written" id="ii" data-clicked="false">ii</btn>
+                <button class="written" id="i" data-clicked="false">i</button>
+                <button class="written" id="ii" data-clicked="false">ii</button>
                 <btn class="written" id="iii" data-clicked="false">iii</btn>
             </nav> 
         </div>

@@ -138,6 +138,19 @@ a {
     text-decoration: none;
 }
 
+.statement-holder {
+    margin-top: -20px;
+}
+
+.equals-sign {
+    position: relative;
+    left: 40px;
+    width: 10px;
+    height: 15px;
+    border: 2px white;
+    border-style: none solid;
+}
+
 #bgimg {
     background-image: url('/images/dna-white.png');
     background-size: cover;
@@ -213,47 +226,21 @@ footer {
     margin-right: 20px;
 }
 
-/* .mobilelong {
-    width: 1px;
-    height: 300px;
-    left: 30px;
-    top: 50px;
-}
-.mobiletop {
-    width: 170px;
-    height: 1px;
-    left: 30px;
-    top: 50px;
-}
-.mobilebottom {
-    height: 1px;
-    width: 100px;
-    left: 30px;
-    top: 350px
-}
-#container {
-    position: absolute;
-    top: 50px;
-    left: 30px;
-    padding: 10px;
-    width: 150px;
-    font-size: 11px;
-}
-.line {
-    background-color: white;
-    position: absolute;
-} */
-
-btn {
+button {
     border-style: outset;
     border-width: 2px;
     border-color: white; 
     background-color: black;
+    color: white;
+    text-align: left; 
+    padding: 0px 0px;
+    font-size: 16px;
     margin-left: 2px;
     box-shadow: 0px 0px 5px 0px black;  
     transition: background-color 0.5s, color 0.5s;
+    font-family: 'Inconsolata';
 }
-btn:hover {
+button:hover {
     color: black !important;
     background-color: white !important;
     border-style: inset !important;
