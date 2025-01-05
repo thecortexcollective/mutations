@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // SCALING
+    function scalePage(){
+        const vw = window.innerWidth;
+        const main = document.querySelector('main');
+        let scaleFactor;
+        if (vw >= 700){
+            scaleFactor = (vw - 80) / 600;
+        }
+        main.style.transform = `scale(${scaleFactor})`;
+    }
+    scalePage();
+    window.addEventListener('resize', scalePage);
+
     // POPULATING
     const musicButton = document.getElementById('music-button');
     musicButton.innerHTML = musicShort;
