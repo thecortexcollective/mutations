@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
-    const i_short = 
+    const i_statement = 
         `<div class="statement-holder">
             <br><br>
             <button id="i-button" onclick="toggle('i-statement');">
@@ -17,7 +17,7 @@
                 Max's description goes here.
             </p>
         </div>`;
-    const ii_short = 
+    const ii_statement = 
         `<div class="statement-holder">
             <br><br>
             <button id="ii-button" onclick="toggle('ii-statement');">
@@ -37,7 +37,7 @@
                 burns and regrows - to change the future, to change the world.
             </p>
         </div>`;
-    const iii_short = 
+    const iii_statement = 
         `<div class="statement-holder">
             <br><br>
             <button id="iii-button" onclick="toggle('iii-statement');">
@@ -62,7 +62,7 @@
                 manifestations of misogyny throughout history.
             </p>
         </div>`;
-    const iv_short = ``;
+    const iv_statement = ``;
 
     const written_descrips = `<p>
                     i. <i>What Does it Mean to Take?</i>
@@ -81,23 +81,6 @@
         element.style.display = element.style.display === 'block' ? 'none' : 'block';
     }; 
 </script>
-<style>
-    /* #music:hover::after {
-        content: "perception mixed with multiplication. As each melody repeats, something small within the piece is changed-- the swaying of the synths, the speed of the tremolo. Small changes are meant to mask the way we see the world. Our perceptions are constantly changing. We mutate according to our surroundings, yet our memories are parasites within our psyches. They involuntarily multiply, and our experiences make us grow stronger.";
-    }
-    #visart:hover::after {
-        content: "with its cracks and infestations, it asks the twisted question: “If beauty is in my eyes, don’t the flaws exist there too?” So, as you look into the Beholder, you are met with a nightmarish version of yourself. A parasitic perception. Monarch butterflies stare into its cracks and find the parasite, ophryocystis elektroscirrha (OE), crumpling their wings, stripping them of a beauty once revered by all. The Beholder inadvertently reflects the ever-changing beauty standards in our world that tell people, especially women, that no matter how beautiful you may be, you’ll never be good enough in their eyes. Don’t look in the eyes of the Beholder.";
-    }
-    #i-p:hover::after {
-        content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
-    }
-    #ii-p:hover::after {
-        content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
-    }
-    #iii-p:hover::after {
-        content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
-    } */
-</style>
 <body>
     <div id="navbar">
         <div id="cortex">
@@ -105,10 +88,10 @@
             cortex</a>
         </div>
         <nav>
-            <button href="">about us</button>
-            <button href="">homepage</button>
-            <button href="">events</button>
-            <button href="">contact</button>
+            <button onclick="window.open('https://cortexmagazine.com/who-we-are', '_blank');">about us</button>
+            <button onclick="window.open('https://cortexmagazine.com', '_blank');">homepage</button>
+            <button onclick="window.open('https://cortexmagazine.com/events', '_blank');">events</button>
+            <button onclick="window.open('https://cortexmagazine.com/contact', '_blank');">contact</button>
         </nav> 
     </div>
     <main>

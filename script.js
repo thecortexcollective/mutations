@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'i':
                         pdfBox.innerHTML = `
                             <p id="i-p" style="cursor: pointer;">
-                                ${i_short} 
+                                ${i_statement} 
                             </p>
                             <img class="pdf" src="${path_to_i}">
                         `; 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'ii':
                         pdfBox.innerHTML = `
                             <p id="ii-p" style="cursor: pointer;">
-                                ${ii_short} 
+                                ${ii_statement} 
                             </p>
                             <img class="pdf" src="${path_to_ii}">
                         `; 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'iii':
                         pdfBox.innerHTML = `
                             <p id="iii-p" style="cursor: pointer;">
-                                ${iii_short} 
+                                ${iii_statement} 
                             </p>
                             <img class="pdf" src="${path_to_iii}">
                         `; 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'iv':
                         pdfBox.innerHTML = `
                             <p id="iv-p" style="cursor: pointer;">
-                                ${iv_short} 
+                                ${iv_statement} 
                             </p>
                             <img class="pdf" src="${path_to_iv}">
                         `; 
