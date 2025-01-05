@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // POPULATING
+    const musicButton = document.getElementById('music-button');
+    musicButton.innerHTML = musicShort;
+    const music = document.getElementById('music');
+    music.innerHTML = musicStatement;
+    const visartButton = document.getElementById('visart-button');
+    visartButton.innerHTML = visartShort;
+    const visart = document.getElementById('visart');
+    visart.innerHTML = visartStatement;
+    const pdfBox = document.getElementById('pdf-box'); 
+    pdfBox.innerHTML = written_descrips;
+
     // GLITCHES
     let glitchBox = document.querySelector('#glitch-box');
     let scrollTimeout;
@@ -15,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // WRITTEN WRITTEN WRITTEN
 
     const writtens = document.querySelectorAll('.written');
-    const pdfBox = document.getElementById('pdf-box'); 
     const nav = document.getElementById('nav');
     
     writtens.forEach(button => {

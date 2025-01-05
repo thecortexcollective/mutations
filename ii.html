@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
+    const visartShort = `<i>Beholder</i> by Kamryn Davenport`;
+    const visartStatement = `The mirror, the <i>Beholder</i>, is the manifestation of dysmorphia
+                that lingers in the back of one's mind. With its cracks and
+                infestations, it asks the twisted question: “If beauty is in my
+                eyes, don’t the flaws exist there too?” So, as you look into the
+                Beholder, you are met with a nightmarish version of yourself. A
+                parasitic perception. Monarch butterflies stare into its cracks and
+                find the parasite, ophryocystis elektroscirrha (OE), crumpling their
+                wings, stripping them of a beauty once revered by all. The Beholder
+                inadvertently reflects the ever-changing beauty standards in our
+                world that tell people, especially women, that no matter how
+                beautiful you may be, you’ll never be good enough in their eyes.
+                Don’t look in the eyes of the Beholder.`; 
+    const musicShort = `<i>Parisitosis</i> by Diana Omar`;
+    const musicStatement = `<i>Parisitosis</i> captures the essence of existence –
+                perception mixed with multiplication. As each melody repeats,
+                something small within the piece is changed-- the swaying of the
+                synths, the speed of the tremolo. Small changes are meant to mask
+                the way we see the world. Our perceptions are constantly changing.
+                We mutate according to our surroundings, yet our memories are
+                parasites within our psyches. They involuntarily multiply, and our
+                experiences make us grow stronger.`;
     const i_statement = 
         `<div class="statement-holder">
             <br><br>
@@ -98,6 +120,7 @@
         <header>
             <a href="cortexmagazine.github.io/mutations" target="_blank">
                 <h1><- how we lived off each other</h1>
+                <!-- TITLE and BACKLINK-->
             </a>
         </header>
         <div id="player">
@@ -110,45 +133,21 @@
         </div>
 
         <audio id="sound" controls preload class="remove">
-            <source src="audio/parasitosis.wav" type="audio/wav">
+            <source src="audio/parasitosis.wav" type="audio/wav"> 
+            <!-- AUDIO SOURCE -->
         </audio>
         <div class="statement-holder">
             <div class="equals-sign"></div>
-            <button id="music-button" onclick="toggle('music');">
-                <i>Parisitosis</i> by Diana Omar
-            </button>
-            <p class="statement" id="music">
-                <i>Parisitosis</i> captures the essence of existence –
-                perception mixed with multiplication. As each melody repeats,
-                something small within the piece is changed-- the swaying of the
-                synths, the speed of the tremolo. Small changes are meant to mask
-                the way we see the world. Our perceptions are constantly changing.
-                We mutate according to our surroundings, yet our memories are
-                parasites within our psyches. They involuntarily multiply, and our
-                experiences make us grow stronger.
-            </p>
+            <button id="music-button" onclick="toggle('music');"></button>
+            <p class="statement" id="music"></p>
         </div>
 
         <img src="visuals/butterfly.PNG" style="margin-bottom: 17px;">
+        <!-- IMAGE SOURCE -->
         <div class="statement-holder">
             <div class="equals-sign"></div>
-            <button id="visart-button" onclick="toggle('visart');">
-                <i>Beholder</i> by Kamryn Davenport
-            </button>
-            <p class="statement" id="visart">
-                The mirror, the <i>Beholder</i>, is the manifestation of dysmorphia
-                that lingers in the back of one's mind. With its cracks and
-                infestations, it asks the twisted question: “If beauty is in my
-                eyes, don’t the flaws exist there too?” So, as you look into the
-                Beholder, you are met with a nightmarish version of yourself. A
-                parasitic perception. Monarch butterflies stare into its cracks and
-                find the parasite, ophryocystis elektroscirrha (OE), crumpling their
-                wings, stripping them of a beauty once revered by all. The Beholder
-                inadvertently reflects the ever-changing beauty standards in our
-                world that tell people, especially women, that no matter how
-                beautiful you may be, you’ll never be good enough in their eyes.
-                Don’t look in the eyes of the Beholder.
-            </p>
+            <button id="visart-button" onclick="toggle('visart');"></button>
+            <p class="statement" id="visart"></p>
         </div>
 
         <div>
@@ -158,18 +157,12 @@
                 <button class="written" id="iii" data-clicked="false">iii</button>
             </nav> 
         </div>
-        <div id="pdf-box">
-            <p>
-                i. <i>What Does it Mean to Take?</i>
-                by Max Kiekhofer.<br>
-                ii. <i>Wildfire</i> by Kane Trundle.<br>
-                iii. <i>Striga</i> by Mara Klein.
-            </p>
-        </div>
+        <div id="pdf-box"></div>
         <div id="filler"></div>
     </main>
     <footer>
         <a href="cortexmagazine.github.io/mutations" target="_blank">
+            <!-- FORWARDLINK -->
             <h3>mutation(s) -></h3>
         </a>
     </footer>
