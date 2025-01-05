@@ -6,6 +6,46 @@
     <title>how we lived off each other</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<script>
+    const i_short = 
+        `<i>What Does it Mean to Take?</i> by Max Kiekhofer
+        explores the concept of taking... `;
+    const ii_short = 
+        `<i>Wildfire</i> by Kane Trundle demonstrates how humans have
+        taken more than they give... `;
+    const iii_short = 
+        `<i>Striga</i> by Mara Klein is a parasitic flower that infects
+        cereal crops... `;
+    const iv_short = ``;
+
+    const written_descrips = `<p>
+                    i. <i>What Does it Mean to Take?</i>
+                    by Max Kiekhofer.<br>
+                    ii. <i>Wildfire</i> by Kane Trundle.<br>
+                    iii. <i>Striga</i> by Mara Klein.
+                </p>`;
+    const path_to_i = `pdfs/maxk.png`;
+    const path_to_ii = `pdfs/kane.png`;
+    const path_to_iii = `pdfs/mara.png`;
+    const path_to_iv = ``;
+</script>
+<style>
+    #music:hover::after {
+        content: "perception mixed with multiplication. As each melody repeats, something small within the piece is changed-- the swaying of the synths, the speed of the tremolo. Small changes are meant to mask the way we see the world. Our perceptions are constantly changing. We mutate according to our surroundings, yet our memories are parasites within our psyches. They involuntarily multiply, and our experiences make us grow stronger.";
+    }
+    #visart:hover::after {
+        content: "with its cracks and infestations, it asks the twisted question: “If beauty is in my eyes, don’t the flaws exist there too?” So, as you look into the Beholder, you are met with a nightmarish version of yourself. A parasitic perception. Monarch butterflies stare into its cracks and find the parasite, ophryocystis elektroscirrha (OE), crumpling their wings, stripping them of a beauty once revered by all. The Beholder inadvertently reflects the ever-changing beauty standards in our world that tell people, especially women, that no matter how beautiful you may be, you’ll never be good enough in their eyes. Don’t look in the eyes of the Beholder.";
+    }
+    #i-p:hover::after {
+        content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
+    }
+    #ii-p:hover::after {
+        content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
+    }
+    #iii-p:hover::after {
+        content: "this imbalance has directly led to the destruction of Earth's ecosystems and the extinction of countless species. Clearly the perception of humans as inherently selfish creatures—parasites feeding upon the earth—certainly has validity. Yet, I argue that this perception doesn't have to be fixed. As Sadie shows us through her mutation, humans are capable of great acts of sacrifice and selflessness—if only we have the courage and willingness to do so. Wake up, dear reader. You and I have power, power to wield the flame that burns and regrows—to change the future, to change the world."
+    }
+</style>
 <body>
     <div id="navbar">
         <div id="cortex">
@@ -21,7 +61,9 @@
     </div>
     <main>
         <header>
-            <h1>how we lived off each other</h1>
+            <a href="cortexmagazine.github.io/mutations" target="_blank">
+                <h1><- how we lived off each other</h1>
+            </a>
         </header>
         <div id="player">
             <div id="playpause">
@@ -34,12 +76,16 @@
         <audio id="sound" controls preload class="remove">
             <source src="audio/parasitosis.wav" type="audio/wav">
         </audio>
-        <p><i>Parisitosis</i> by Diana Omar is a something 
-            something something something something.</p>
+        <p id="music" style="cursor: pointer;">
+            <i>Parisitosis</i> by Diana Omar captures the
+            essence of existence...
+        </p>
         <img src="visuals/butterfly.PNG">
-        <p><i>Butterfly Smth</i> by Kamryn Davenport
-            is a something 
-            something something something something.</p>
+        <p id="visart" style="cursor: pointer;">
+            <i>The Beholder</i> by Kamryn Davenport
+            is a mirror, a manifestation of the dysmorphia that
+            lingers in the back of one's mind... 
+        </p>
         <div>
             <nav style="flex-direction: row;" id="written-nav">
                 <btn class="written" id="i" data-clicked="false">i</btn>
@@ -59,20 +105,9 @@
     </main>
     <footer>
         <a href="cortexmagazine.github.io/mutations" target="_blank">
-            <h3>mutation(s)</h3></a>
+            <h3>mutation(s) -></h3>
+        </a>
     </footer>
-    <script>
-        const written_descrips = `<p>
-                        i. <i>What Does it Mean to Take?</i>
-                        by Max Kiekhofer.<br>
-                        ii. <i>Wildfire</i> by Kane Trundle.<br>
-                        iii. <i>Striga</i> by Mara Klein.
-                    </p>`;
-        const path_to_i = `maxk-img`;
-        const path_to_ii = `kane-img`;
-        const path_to_iii = `mara-img`;
-        const path_to_iv = ``;
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

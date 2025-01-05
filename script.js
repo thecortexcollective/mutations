@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // GLITCHES
+    let glitchBox = document.querySelector('#glitch-box');
+    let scrollTimeout;
+    window.addEventListener('scroll', function(){
+        glitchBox.style.display = 'none';
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function(){
+            glitchBox.style.display = 'block';
+        }, 200); // hide after 0.2 seconds of inactivity
+    }); 
+
     // WRITTEN WRITTEN WRITTEN
     // WRITTEN WRITTEN WRITTEN
 
@@ -29,21 +40,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 switch (buttonId) {
                     case 'i':
                         pdfBox.innerHTML = `
+                            <p id="i-p" style="cursor: pointer;">
+                                ${i_short} 
+                            </p>
                             <img class="pdf" src="${path_to_i}">
                         `; 
                         break;
                     case 'ii':
                         pdfBox.innerHTML = `
+                            <p id="ii-p" style="cursor: pointer;">
+                                ${ii_short} 
+                            </p>
                             <img class="pdf" src="${path_to_ii}">
                         `; 
                         break;
                     case 'iii':
                         pdfBox.innerHTML = `
+                            <p id="iii-p" style="cursor: pointer;">
+                                ${iii_short} 
+                            </p>
                             <img class="pdf" src="${path_to_iii}">
                         `; 
                         break;
                     case 'iv':
                         pdfBox.innerHTML = `
+                            <p id="iv-p" style="cursor: pointer;">
+                                ${iv_short} 
+                            </p>
                             <img class="pdf" src="${path_to_iv}">
                         `; 
                         break;
