@@ -117,22 +117,6 @@ body {
     align-items: center;
 }
 
-#glitch-box {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    pointer-events: none;
-    display: block;
-}
-
-#glitch-box img {
-    position: absolute;
-    border: none;
-}
-
 a {
     color: white;
     text-decoration: none;
@@ -209,10 +193,32 @@ nav {
     margin: 10px 0px;
 }
 #pdf {
-    width: 500px;
-    height: 500px;
     border: 2px solid white; 
+    position: relative;
 }
+.glitch {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+.glitch img {
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+@keyframes hueRotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg); 
+    }
+}
+@keyframes strobe {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0; }
+}
+
 #filler {
     height: 50px;
 }

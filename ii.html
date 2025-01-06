@@ -7,6 +7,50 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
+    const i_dict = {
+        a: {
+            src: `glitches/mara/mara00.png`,
+            width: '130%',
+            height: '87%',
+            left: '-14%',
+            top: '-8.5%',
+            filter: `saturate(8)
+                    drop-shadow(0 0 1px #fff)
+                    invert(1)`,
+            animation: `hueRotate 20s infinite`,
+        },
+        b: {
+            src: `glitches/mara/mara10.png`,
+            width: '40%',
+            height: '15%',
+            left: '60%',
+            top: '90%',
+            filter: `saturate(4)
+            drop-shadow(0 0 1px #000)`,
+            animation: 'none', 
+        },
+        c: {
+            src: `glitches/mara/mara11.png`,
+            width: '15%',
+            height: '7%',
+            left: '40%',
+            top: '60%',
+            filter: `saturate(4) 
+                    drop-shadow(0 0 1px #000)`,
+            animation: 'none', 
+        },
+        d: {
+            src: `glitches/mara/mara19.png`,
+            width: '15%',
+            height: '7%',
+            left: '40%',
+            top: '78%',
+            filter: `saturate(4) 
+                    drop-shadow(0 0 1px #000)`,
+            animation: 'none', 
+        },
+        
+    }
     const visartShort = `<i>Beholder</i> by Kamryn Davenport`;
     const visartStatement = `The mirror, the <i>Beholder</i>, is the manifestation of dysmorphia
                 that lingers in the back of one's mind. With its cracks and

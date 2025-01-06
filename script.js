@@ -4,11 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function scalePage(){
         const vw = window.innerWidth;
         const main = document.querySelector('main');
-        let scaleFactor;
+        let scaleFactor = 1;
         if (vw >= 700){
             scaleFactor = (vw - 80) / 600;
         }
         main.style.transform = `scale(${scaleFactor})`;
+        // const pdf = document.getElementById('pdf');
+        // if (pdf){
+        //     pdf.style.transform = `scale(${scaleFactor})`; 
+        //     // TODO this is the line that makes the pdf burst, good?
+        // }
     }
     scalePage();
     window.addEventListener('resize', scalePage);
@@ -24,17 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     visart.innerHTML = visartStatement;
     const pdfBox = document.getElementById('pdf-box'); 
     pdfBox.innerHTML = written_descrips;
-
-    // GLITCHES
-    let glitchBox = document.querySelector('#glitch-box');
-    let scrollTimeout;
-    window.addEventListener('scroll', function(){
-        glitchBox.style.display = 'none';
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function(){
-            glitchBox.style.display = 'block';
-        }, 200); // hide after 0.2 seconds of inactivity
-    }); 
 
     // WRITTEN WRITTEN WRITTEN
     // WRITTEN WRITTEN WRITTEN
@@ -59,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const buttonId = event.target.id;
             const clicked = event.target.dataset.clicked === "true";
             event.target.dataset.clicked = clicked ? "false" : "true";
+            let glitch_dict; 
 
             if (event.target.dataset.clicked === "true"){
                 switch (buttonId) {
@@ -67,38 +62,84 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p id="i-p" style="cursor: pointer;">
                                 ${i_statement} 
                             </p>
-                            <img class="pdf" src="${path_to_i}">
+                            <div id="pdf">
+                                <img src="${path_to_i}">
+                            </div>
                         `; 
+                        glitch_dict = i_dict; 
                         break;
                     case 'ii':
                         pdfBox.innerHTML = `
                             <p id="ii-p" style="cursor: pointer;">
                                 ${ii_statement} 
                             </p>
-                            <img class="pdf" src="${path_to_ii}">
+                            <div id="pdf">
+                                <img src="${path_to_ii}">
+                            </div>
                         `; 
+                        glitch_dict = ii_dict; 
                         break;
                     case 'iii':
                         pdfBox.innerHTML = `
                             <p id="iii-p" style="cursor: pointer;">
                                 ${iii_statement} 
                             </p>
-                            <img class="pdf" src="${path_to_iii}">
+                            <div id="pdf">
+                                <img src="${path_to_iii}">
+                            </div>
                         `; 
+                        glitch_dict = iii_dict; 
                         break;
                     case 'iv':
                         pdfBox.innerHTML = `
                             <p id="iv-p" style="cursor: pointer;">
                                 ${iv_statement} 
                             </p>
-                            <img class="pdf" src="${path_to_iv}">
+                            <div id="pdf">
+                                <img src="${path_to_iv}">
+                            </div>
                         `; 
+                        glitch_dict = iv_dict; 
                         break;
                     default:
                 }
                 event.target.style.color = "black";
                 event.target.style.backgroundColor = "white";
                 event.target.style.borderStyle = "inset";
+
+                // GLITCHES GLITCHES GLITCHES
+                // GLITCHES GLITCHES GLITCHES
+                let pdf = document.getElementById('pdf');
+
+                for (const key in glitch_dict){
+                    console.log(key, glitch_dict[key]);
+                    let thisGlitch = document.createElement('div');
+                    thisGlitch.classList.add('glitch');
+                    thisGlitch.innerHTML = `<img src="${glitch_dict[key].src}">`;
+                    thisGlitch.style.top = `${glitch_dict[key].top}`;
+                    thisGlitch.style.left = `${glitch_dict[key].left}`;
+                    thisGlitch.style.width = `${glitch_dict[key].width}`;
+                    thisGlitch.style.height = `${glitch_dict[key].height}`;
+                    thisGlitch.firstChild.style.animation = `${glitch_dict[key].animation}`;
+                    thisGlitch.style.filter = `${glitch_dict[key].filter}`;  
+                    pdf.appendChild(thisGlitch);
+                }
+
+                // TODO UN-COMMENT!
+                // let scrollTimeout;
+                // window.addEventListener('scroll', function(){
+                //     let allGlitches = document.querySelectorAll('.glitch');
+                //     allGlitches.forEach(glitch => {
+                //         glitch.style.visibility = 'visible';
+                //     });
+                //     clearTimeout(scrollTimeout);
+                //     scrollTimeout = setTimeout(function(){
+                //         allGlitches.forEach(glitch => {
+                //             glitch.style.visibility = 'hidden';
+                //         });
+                //     }, 200); // show/hide after 0.2 seconds of inactivity
+                // }); 
+
             } else {
                 pdfBox.innerHTML = written_descrips;
                 event.target.style.color = "white";
