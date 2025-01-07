@@ -7,49 +7,182 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
-    const i_dict = {
-        a: {
-            src: `glitches/mara/mara00.png`,
-            width: '130%',
-            height: '87%',
-            left: '-14%',
-            top: '-8.5%',
-            filter: `saturate(8)
-                    drop-shadow(0 0 1px #fff)
-                    invert(1)`,
-            animation: `hueRotate 20s infinite`,
+    const page_dict = {
+        butterfly: {
+            src: `glitches/mara/butterfly.png`,
+            width: '20%',
+            height: '20%',
+            left: '-5%',
+            top: '0%',
+            filter: `saturate(8) `,
+            animation: 'none', 
         },
-        b: {
-            src: `glitches/mara/mara10.png`,
-            width: '40%',
-            height: '15%',
+        rose: {
+            src: `glitches/mara/rose.png`,
+            width: '30%',
+            height: '20%',
+            left: '85%',
+            top: '10%',
+            filter: `saturate(5)
+                    hue-rotate(280deg)`,
+            animation: 'none', 
+        },
+        floater: {
+            src: `glitches/mara/floater.png`,
+            width: '20%',
+            height: '20%',
             left: '60%',
-            top: '90%',
-            filter: `saturate(4)
-            drop-shadow(0 0 1px #000)`,
+            top: '80%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
             animation: 'none', 
         },
-        c: {
-            src: `glitches/mara/mara11.png`,
-            width: '15%',
+    }
+    const i_dict = {
+        // a: {
+        //     src: `glitches/mara/mara00.png`,
+        //     width: '130%',
+        //     height: '87%',
+        //     left: '-14%',
+        //     top: '-8.5%',
+        //     filter: `saturate(8)
+        //             drop-shadow(0 0 1px #fff)
+        //             invert(1)`,
+        //     animation: `hueRotate 20s infinite`,
+        // },
+        blood: {
+            src: `glitches/mara/blood.png`,
+            width: '8%',
+            height: '5%',
+            left: '23%',
+            top: '25.5%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+            animation: 'none', 
+        },
+        amoeba: {
+            src: `glitches/mara/amoeba.png`,
+            width: '12%',
+            height: '5%',
+            left: '50%',
+            top: '2.5%',
+            filter: `saturate(8) 
+                    hue-rotate(100deg)`,
+            animation: 'none', 
+        },
+        oranges: {
+            src: `glitches/mara/oranges.png`,
+            width: '12%',
+            height: '5%',
+            left: '-5%',
+            top: '20%',
+            filter: `saturate(8)`,
+            animation: 'none', 
+        },
+        claws: {
+            src: `glitches/mara/claws.png`,
+            width: '12%',
+            height: '5%',
+            left: '62%',
+            top: '29%',
+            filter: `saturate(8) 
+                    hue-rotate(100deg)`,
+            animation: 'none', 
+        },
+        squiggle: {
+            src: `glitches/mara/squiggle.png`,
+            width: '50%',
+            height: '5%',
+            left: '55%',
+            top: '38%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+            animation: 'none', 
+        },
+        corn: {
+            src: `glitches/mara/corn.png`,
+            width: '7%',
+            height: '4%',
+            left: '-2%',
+            top: '0%',
+            filter: `saturate(8)`,
+            animation: 'none', 
+        },
+        eyes: {
+            src: `glitches/mara/eyes.png`,
+            width: '16%',
+            height: '4%',
+            left: '4%',
+            top: '26%',
+            filter: `saturate(8) 
+                    hue-rotate(180deg)`,
+            animation: 'none', 
+        },
+        eye: {
+            src: `glitches/mara/eye.png`,
+            width: '16%',
             height: '7%',
-            left: '40%',
-            top: '60%',
-            filter: `saturate(4) 
-                    drop-shadow(0 0 1px #000)`,
+            left: '55%',
+            top: '10%',
+            filter: `saturate(8) 
+                    hue-rotate(180deg)`,
             animation: 'none', 
         },
-        d: {
-            src: `glitches/mara/mara19.png`,
-            width: '15%',
+        wormfly: {
+            src: `glitches/mara/wormfly.png`,
+            width: '16%',
             height: '7%',
-            left: '40%',
-            top: '78%',
-            filter: `saturate(4) 
-                    drop-shadow(0 0 1px #000)`,
+            left: '50%',
+            top: '79%',
+            filter: `saturate(8)`,
             animation: 'none', 
         },
-        
+        blobs: {
+            src: `glitches/mara/blobs.png`,
+            width: '20%',
+            height: '7%',
+            left: '50%',
+            top: '58%',
+            filter: `saturate(8)`,
+            animation: 'none', 
+        },
+        chem: {
+            src: `glitches/mara/chem.png`,
+            width: '30%',
+            height: '8%',
+            left: '32%',
+            top: '44%',
+            filter: `saturate(8)`,
+            animation: 'none', 
+        },
+        husk: {
+            src: `glitches/mara/husk.png`,
+            width: '50%',
+            height: '20%',
+            left: '-5%',
+            top: '58%',
+            filter: `saturate(8)`,
+            animation: 'none', 
+        },
+        table: {
+            src: `glitches/mara/table.png`,
+            width: '22%',
+            height: '5%',
+            left: '44%',
+            top: '89.9%',
+            filter: `saturate(8)`,
+            animation: 'none', 
+        },
+        runner: {
+            src: `glitches/mara/runner.png`,
+            width: '18%',
+            height: '15%',
+            left: '85%',
+            top: '65%',
+            filter: `saturate(8)
+                    hue-rotate(90deg)`,
+            animation: 'none', 
+        },
     }
     const visartShort = `<i>Beholder</i> by Kamryn Davenport`;
     const visartStatement = `The mirror, the <i>Beholder</i>, is the manifestation of dysmorphia

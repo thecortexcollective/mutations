@@ -30,6 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const pdfBox = document.getElementById('pdf-box'); 
     pdfBox.innerHTML = written_descrips;
 
+    // BASAL GLITCHES
+    // BASAL GLITCHES
+    let main = document.querySelector('main');
+    for (const key in page_dict){
+        console.log(main);
+        console.log(page_dict);
+        console.log(key, page_dict[key]);
+        let thisGlitch = document.createElement('div');
+        thisGlitch.classList.add('glitch');
+        thisGlitch.innerHTML = `<img src="${page_dict[key].src}">`;
+        thisGlitch.style.top = `${page_dict[key].top}`;
+        thisGlitch.style.left = `${page_dict[key].left}`;
+        thisGlitch.style.width = `${page_dict[key].width}`;
+        thisGlitch.style.height = `${page_dict[key].height}`;
+        thisGlitch.firstChild.style.animation = `${page_dict[key].animation}`;
+        thisGlitch.style.filter = `${page_dict[key].filter}`;  
+        main.appendChild(thisGlitch);
+    }
+
     // WRITTEN WRITTEN WRITTEN
     // WRITTEN WRITTEN WRITTEN
 
@@ -110,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // GLITCHES GLITCHES GLITCHES
                 // GLITCHES GLITCHES GLITCHES
                 let pdf = document.getElementById('pdf');
-
                 for (const key in glitch_dict){
                     console.log(key, glitch_dict[key]);
                     let thisGlitch = document.createElement('div');
