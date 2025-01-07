@@ -142,22 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     thisGlitch.style.filter = `${glitch_dict[key].filter}`;  
                     pdf.appendChild(thisGlitch);
                 }
-
-                // TODO UN-COMMENT!
-                // let scrollTimeout;
-                // window.addEventListener('scroll', function(){
-                //     let allGlitches = document.querySelectorAll('.glitch');
-                //     allGlitches.forEach(glitch => {
-                //         glitch.style.visibility = 'visible';
-                //     });
-                //     clearTimeout(scrollTimeout);
-                //     scrollTimeout = setTimeout(function(){
-                //         allGlitches.forEach(glitch => {
-                //             glitch.style.visibility = 'hidden';
-                //         });
-                //     }, 200); // show/hide after 0.2 seconds of inactivity
-                // }); 
-
             } else {
                 pdfBox.innerHTML = written_descrips;
                 event.target.style.color = "white";
@@ -166,6 +150,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // TODO UN-COMMENT!
+    let scrollTimeout;
+    window.addEventListener('scroll', function(){
+        let allGlitches = document.querySelectorAll('.glitch');
+        allGlitches.forEach(glitch => {
+            glitch.style.visibility = 'visible';
+        });
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function(){
+            allGlitches.forEach(glitch => {
+                glitch.style.visibility = 'hidden';
+            });
+        }, 800); // show/hide after X seconds of inactivity
+    }); 
 
     // AUDIO AUDIO AUDIO
     // AUDIO AUDIO AUDIO

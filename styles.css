@@ -213,9 +213,17 @@ nav {
         filter: hue-rotate(360deg); 
     }
 }
-@keyframes strobe {
+@keyframes strobe1 {
     0%, 100% {opacity: 1;}
     50% {opacity: 0; }
+}
+@keyframes strobe2 {
+    10%, 100% {opacity: 1;}
+    70% {opacity: 0; }
+}
+@keyframes strobe3 {
+    30%, 100% {opacity: 0;}
+    80% {opacity: 1; }
 }
 
 #filler {
