@@ -195,6 +195,9 @@ nav {
 #pdf {
     position: relative;
 }
+#pdf img {
+    border: none; 
+}
 .glitch {
     position: absolute;
     z-index: 10;
