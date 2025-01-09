@@ -1,78 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="shortcut icon" type="image/png" href="favicon.png">
-        <meta charset="utf8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mutation(s)</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="navbar" style="flex-direction: column-reverse; 
-                                right: 10px;
-                                bottom: 50px; 
-                                left: auto;
-                                transform: none">
-            <div id="cortex">
-                <a href="https://www.instagram.com/cortexyale/">
-                cortex</a>
-            </div>
-            <nav style="flex-direction: column-reverse;">
-                <btn href="">about us</btn>
-                <btn href="">homepage</btn>
-                <btn href="">events</btn>
-                <btn href="">contact</btn>
-            </nav> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mutation(s)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    const glitch_box_dict = {
+        butterfly: {
+            src: `glitches/mara/butterfly.png`,
+            width: '80%',
+            height: '80%',
+            top: '15%', 
+            left: '15%',
+            filter: `saturate(8) `,
+        },
+        rose: {
+            src: `glitches/mara/rose.png`,
+            width: '80%',
+            height: '80%',
+            top: '5%', 
+            left: '15%',
+            filter: `saturate(5)
+                    hue-rotate(280deg)`,
+        },
+        floater: {
+            src: `glitches/mara/floater.png`,
+            width: '80%',
+            height: '80%',
+            top: '8%', 
+            left: '12%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+        },
+    }
+
+    // TOGGLE VISIBILITY BY ID
+    function toggle(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }; 
+</script>
+<body>
+    <div id="navbar">
+        <div id="cortex">
+            <a href="https://www.instagram.com/cortexyale/">
+            cortex</a>
         </div>
-        <main style="min-width: 400px;">
-            <div id="bgimg"></div>
-            <header>
-                <h1>mutation(s)</h1>
-            </header>
-            <div id="player" style="width: 150px;">
-                <div id="playpause">
-                    <img src="images/play-pause-button.png">
-                </div>
-                <div id="progress-container">
-                    <div id="progress"></div>
-                </div>
-            </div>
-            <audio id="sound" controls preload class="remove">
-                <source src="audio/main_theme.mp3" type="audio/mp3">
-            </audio>
-        </main>
-        <footer>
+        <nav>
+            <button onclick="window.open('https://cortexmagazine.com/who-we-are', '_blank');">about us</button>
+            <button onclick="window.open('https://cortexmagazine.com', '_blank');">homepage</button>
+            <button onclick="window.open('https://cortexmagazine.com/events', '_blank');">events</button>
+            <button onclick="window.open('https://cortexmagazine.com/contact', '_blank');">contact</button>
+        </nav> 
+    </div>
+    <main>
+        <header>
             <a href="cortexmagazine.github.io/mutations" target="_blank">
-                <h3>mutation(s)</h3></a>
-        </footer>
-        <script src="script.js"></script>
+                <h1>mutation(s)</h1>
+                <!-- TITLE and BACKLINK-->
+            </a>
+        </header>
+        <div id="player">
+            <div id="playpause">
+                <img src="images/play-pause-button.png">
+            </div>
+            <div id="progress-container">
+                <div id="progress"></div>
+            </div>
+        </div>
 
+        <audio id="sound" controls preload class="remove">
+            <source src="audio/main_theme.wav" type="audio/wav"> 
+            <!-- AUDIO SOURCE -->
+        </audio>
+        <p>The <em>mutation(s)</em> main theme was jointly composed
+        by Jack Davisson, Diana Omar, Orion Shtrezi, and David
+        Garsten, and performed live at the installation.
+        <a href="" style="display: none">Watch us play here.</a></p>
+        <!-- ADD AFTER INSTALLATION -->
 
+        <div id="glitch-box"></div>
 
-<!-- 
-
-        <div class="mobilelong line"></div>
-        <div class="mobiletop line"></div>
-        <div class="mobilebottom line"></div>
-        <div id="container">
-            <em>aging and its processes</em>
-            <hr>
-            cozette weng <br>
-            max smith <br>
-            orion shtrezi <br>
-            chloe alfonso <br>
-            sheyla rodriguez <br>
-            <br>
-            <btn>personal meditative musical drawing</btn>
-            <br><br>
-            <btn>how to remember</btn>
-            <br><br>
-            <btn>chromatic aberration</btn>
-            <br><br>
-            <btn>the forging</btn>
-        </div> -->
-    </body>
-    <script>
-
-    </script>
+        <!-- <img src="visuals/butterfly.PNG" style="margin-bottom: 0px;">
+        IMAGE SOURCE -->
+        <p>The flashing images you will see on this website were drawn
+            by cortex editors on <em>Doodle Day</em>, where we print
+            out all of the written pieces, doodle over them, and
+            then scan the results.
+        </p>
+        <p>
+            This website was coded by David Garsten from scratch.
+        </p>
+        <a href="cortexmagazine.github.io/mutations" target="_blank">
+            <!-- FORWARDLINK -->
+            <h3 class="footer">enter -></h3>
+        </a>
+        <div id="filler"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>

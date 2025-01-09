@@ -20,33 +20,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // POPULATING
     const musicButton = document.getElementById('music-button');
-    musicButton.innerHTML = musicShort;
+    if (musicButton !== null){
+        musicButton.innerHTML = musicShort;
+    }
     const music = document.getElementById('music');
-    music.innerHTML = musicStatement;
+    if (music !== null){
+        music.innerHTML = musicStatement;
+    }
     const visartButton = document.getElementById('visart-button');
-    visartButton.innerHTML = visartShort;
+    if (visartButton !== null){
+        visartButton.innerHTML = visartShort;
+    }
     const visart = document.getElementById('visart');
-    visart.innerHTML = visartStatement;
+    if (visart !== null){
+        visart.innerHTML = visartStatement;
+    }
     const pdfBox = document.getElementById('pdf-box'); 
-    pdfBox.innerHTML = written_descrips;
+    if (pdfBox !== null){
+        pdfBox.innerHTML = written_descrips;
+    }
+    
+    // HOMEPAGE GLITCHBOX
+    // HOMEPAGE GLITCHBOX
+    const glitchBox = document.getElementById('glitch-box');
+    if (typeof glitch_box_dict !== 'undefined' && glitch_box_dict !== null){
+        console.log('glitch_box_dict exists');
+        for (const key in glitch_box_dict){
+            let thisGlitch = document.createElement('img');
+            thisGlitch.src = glitch_box_dict[key].src;
+            thisGlitch.style.top = glitch_box_dict[key].top;
+            thisGlitch.style.left = glitch_box_dict[key].left;
+            thisGlitch.style.width = glitch_box_dict[key].width;
+            thisGlitch.style.height = glitch_box_dict[key].height;
+            thisGlitch.style.animation = 'fadeInOut 3s 1 ease-in';
+            thisGlitch.style.filter = glitch_box_dict[key].filter;
+            glitchBox.appendChild(thisGlitch);
+            console.log('appended a glitch'); 
+        }
+    }
+
+
+    const images = glitchBox.querySelectorAll("img");
+    let currIndex = 0;
+    function cycleImages(){
+        images[currIndex].classList.add("active");
+        setTimeout(function(){
+            images[currIndex].classList.remove("active");
+        }, 100); 
+        currIndex = (currIndex+1)%images.length;
+    }
+    setInterval(cycleImages, 3000); // 1 second per image
 
     // BASAL GLITCHES
     // BASAL GLITCHES
     let main = document.querySelector('main');
-    for (const key in page_dict){
-        console.log(main);
-        console.log(page_dict);
-        console.log(key, page_dict[key]);
-        let thisGlitch = document.createElement('div');
-        thisGlitch.classList.add('glitch');
-        thisGlitch.innerHTML = `<img src="${page_dict[key].src}">`;
-        thisGlitch.style.top = `${page_dict[key].top}`;
-        thisGlitch.style.left = `${page_dict[key].left}`;
-        thisGlitch.style.width = `${page_dict[key].width}`;
-        thisGlitch.style.height = `${page_dict[key].height}`;
-        thisGlitch.firstChild.style.animation = `${page_dict[key].animation}`;
-        thisGlitch.style.filter = `${page_dict[key].filter}`;  
-        main.appendChild(thisGlitch);
+    if (typeof page_dict !== 'undefined' && page_dict !== null){
+        for (const key in page_dict){
+            console.log(main);
+            console.log(page_dict);
+            console.log(key, page_dict[key]);
+            let thisGlitch = document.createElement('div');
+            thisGlitch.classList.add('glitch');
+            thisGlitch.innerHTML = `<img src="${page_dict[key].src}">`;
+            thisGlitch.style.top = `${page_dict[key].top}`;
+            thisGlitch.style.left = `${page_dict[key].left}`;
+            thisGlitch.style.width = `${page_dict[key].width}`;
+            thisGlitch.style.height = `${page_dict[key].height}`;
+            thisGlitch.firstChild.style.animation = `${page_dict[key].animation}`;
+            thisGlitch.style.filter = `${page_dict[key].filter}`;  
+            main.appendChild(thisGlitch);
+        }
     }
 
     // WRITTEN WRITTEN WRITTEN

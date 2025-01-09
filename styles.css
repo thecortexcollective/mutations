@@ -211,6 +211,34 @@ nav {
     height: 100%;
     width: 100%;
 }
+#glitch-box /* for the homepage */
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    width: 70%;
+    aspect-ratio: 1;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); 
+    overflow: hidden;
+    text-align: center;
+}
+#glitch-box img {
+    position: absolute;
+    border: none; 
+    display: none;
+}
+#glitch-box img.active {
+    display: block;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {opacity: 0.3;}
+    50% {opacity: 1;}
+}
+
 @keyframes hueRotate {
     0% {
         filter: hue-rotate(0deg);
@@ -285,6 +313,6 @@ nav, #navbar {
 #navbar nav button {
     font-size: clamp(16px, 2.7vw, 30px);
 }
-footer a h3 {
+footer a h3, .footer {
     font-size: clamp(25px, 3.5vw, 50px);
 }
