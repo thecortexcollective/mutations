@@ -57,19 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
             glitchBox.appendChild(thisGlitch);
             console.log('appended a glitch'); 
         }
-    }
 
-
-    const images = glitchBox.querySelectorAll("img");
-    let currIndex = 0;
-    function cycleImages(){
-        images[currIndex].classList.add("active");
-        setTimeout(function(){
-            images[currIndex].classList.remove("active");
-        }, 100); 
-        currIndex = (currIndex+1)%images.length;
+        const images = glitchBox.querySelectorAll("img");
+        let currIndex = 0;
+        function cycleImages(){
+            images[currIndex].classList.add("active");
+            setTimeout(function(){
+                images[currIndex].classList.remove("active");
+            }, 100); 
+            currIndex = (currIndex+1)%images.length;
+        }
+        setInterval(cycleImages, 3000); // 1 second per image
     }
-    setInterval(cycleImages, 3000); // 1 second per image
 
     // BASAL GLITCHES
     // BASAL GLITCHES
