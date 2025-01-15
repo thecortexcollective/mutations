@@ -1,20 +1,36 @@
-let pattern = 'stay';
+let pattern = 'strobe', patternIndex = 0; 
+const patterns = ['strobe', 'stay', 'shift', 'stop'];
+let scrollTimeout;
+const glitchButton = document.getElementById('glitch-button');
+newPattern();
 
-function addGlitchScroller(scrollTimeout){
-    if (pattern == 'strobe' || pattern == 'shift'){
-        window.addEventListener('scroll', function(){
-            let allGlitches = document.querySelectorAll('.glitch');
-            allGlitches.forEach(glitch => {
-                glitch.style.visibility = 'visible';
-            });
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(function(){
-                allGlitches.forEach(glitch => {
-                    glitch.style.visibility = 'hidden';
-                });
-            }, 800); // show/hide after X seconds of inactivity
+function newPattern(){
+    patternIndex = (patternIndex + 1) % patterns.length;
+    console.log(`updating pattern from ${pattern} to ${patterns[patternIndex]}`); 
+    pattern = patterns[patternIndex];
+    glitchButton.innerHTML = patterns[(patternIndex + 1) % patterns.length];
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+}
+
+function handleScroll(){
+    let allGlitches = document.querySelectorAll('.glitch');
+    allGlitches.forEach(glitch => {
+        glitch.style.visibility = 'visible';
+    });
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function(){
+        allGlitches.forEach(glitch => {
+            glitch.style.visibility = 'hidden';
         });
+    }, 800); // show/hide after X seconds of inactivity
+}
+
+function addGlitchScroller(){
+    if (pattern == 'stay' || pattern == 'stop'){
+        window.removeEventListener('scroll', handleScroll);
+        return; 
     }
+    window.addEventListener('scroll', handleScroll);
 }
 
 function basalGlitches(page_dict, main){
@@ -66,6 +82,9 @@ function writtenGlitches(glitch_dict, pdf){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // RESET GLITCHES
+    let allGlitches = document.querySelectorAll('.glitch');
+    allGlitches.forEach(div => div.remove());
 
     // SCALING
     function scalePage(){
@@ -239,8 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // GLITCH WHEN SCROLL
-    let scrollTimeout;
-    addGlitchScroller(scrollTimeout);
+    addGlitchScroller();
 
     // AUDIO AUDIO AUDIO
     // AUDIO AUDIO AUDIO

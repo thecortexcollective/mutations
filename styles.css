@@ -313,6 +313,7 @@ button:hover {
     background: conic-gradient(from var(--angle),
     forestgreen, lime, turquoise, cyan, aqua, blue, red);
     border-image: none;
+    border-color: red; 
 }
 @keyframes rotate {
     to {
