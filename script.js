@@ -1,3 +1,70 @@
+let pattern = 'stay';
+
+function addGlitchScroller(scrollTimeout){
+    if (pattern == 'strobe' || pattern == 'shift'){
+        window.addEventListener('scroll', function(){
+            let allGlitches = document.querySelectorAll('.glitch');
+            allGlitches.forEach(glitch => {
+                glitch.style.visibility = 'visible';
+            });
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function(){
+                allGlitches.forEach(glitch => {
+                    glitch.style.visibility = 'hidden';
+                });
+            }, 800); // show/hide after X seconds of inactivity
+        });
+    }
+}
+
+function basalGlitches(page_dict, main){
+    if (pattern == 'stop'){
+        return;
+    }
+    for (const key in page_dict){
+        console.log(main);
+        console.log(page_dict);
+        console.log(key, page_dict[key]);
+        let thisGlitch = document.createElement('div');
+        thisGlitch.classList.add('glitch');
+        thisGlitch.innerHTML = `<img src="${page_dict[key].src}">`;
+        thisGlitch.style.top = `${page_dict[key].top}`;
+        thisGlitch.style.left = `${page_dict[key].left}`;
+        thisGlitch.style.width = `${page_dict[key].width}`;
+        thisGlitch.style.height = `${page_dict[key].height}`;
+        if (pattern == 'stay'){
+            thisGlitch.firstChild.style.animation = `none`; 
+        } else {
+            thisGlitch.firstChild.style.animation = `${page_dict[key][pattern]}`;
+        }
+        thisGlitch.style.filter = `${page_dict[key].filter}`;  
+        main.appendChild(thisGlitch);
+    }
+}
+
+function writtenGlitches(glitch_dict, pdf){
+    if (pattern == 'stop'){
+        return;
+    }
+    for (const key in glitch_dict){
+        console.log(key, glitch_dict[key]);
+        let thisGlitch = document.createElement('div');
+        thisGlitch.classList.add('glitch');
+        thisGlitch.innerHTML = `<img src="${glitch_dict[key].src}">`;
+        thisGlitch.style.top = `${glitch_dict[key].top}`;
+        thisGlitch.style.left = `${glitch_dict[key].left}`;
+        thisGlitch.style.width = `${glitch_dict[key].width}`;
+        thisGlitch.style.height = `${glitch_dict[key].height}`;
+        if (pattern == 'stay'){
+            thisGlitch.firstChild.style.animation = `none`; 
+        } else {
+            thisGlitch.firstChild.style.animation = `${glitch_dict[key][pattern]}`;
+        }
+        thisGlitch.style.filter = `${glitch_dict[key].filter}`;  
+        pdf.appendChild(thisGlitch);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // SCALING
@@ -77,21 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // BASAL GLITCHES
     let main = document.querySelector('main');
     if (typeof page_dict !== 'undefined' && page_dict !== null){
-        for (const key in page_dict){
-            console.log(main);
-            console.log(page_dict);
-            console.log(key, page_dict[key]);
-            let thisGlitch = document.createElement('div');
-            thisGlitch.classList.add('glitch');
-            thisGlitch.innerHTML = `<img src="${page_dict[key].src}">`;
-            thisGlitch.style.top = `${page_dict[key].top}`;
-            thisGlitch.style.left = `${page_dict[key].left}`;
-            thisGlitch.style.width = `${page_dict[key].width}`;
-            thisGlitch.style.height = `${page_dict[key].height}`;
-            thisGlitch.firstChild.style.animation = `${page_dict[key].animation}`;
-            thisGlitch.style.filter = `${page_dict[key].filter}`;  
-            main.appendChild(thisGlitch);
-        }
+        basalGlitches(page_dict, main);
     }
 
     // WRITTEN WRITTEN WRITTEN
@@ -174,19 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // GLITCHES GLITCHES GLITCHES
                 // GLITCHES GLITCHES GLITCHES
                 let pdf = document.getElementById('pdf');
-                for (const key in glitch_dict){
-                    console.log(key, glitch_dict[key]);
-                    let thisGlitch = document.createElement('div');
-                    thisGlitch.classList.add('glitch');
-                    thisGlitch.innerHTML = `<img src="${glitch_dict[key].src}">`;
-                    thisGlitch.style.top = `${glitch_dict[key].top}`;
-                    thisGlitch.style.left = `${glitch_dict[key].left}`;
-                    thisGlitch.style.width = `${glitch_dict[key].width}`;
-                    thisGlitch.style.height = `${glitch_dict[key].height}`;
-                    thisGlitch.firstChild.style.animation = `${glitch_dict[key].animation}`;
-                    thisGlitch.style.filter = `${glitch_dict[key].filter}`;  
-                    pdf.appendChild(thisGlitch);
-                }
+                writtenGlitches(glitch_dict, pdf); 
+
             } else {
                 pdfBox.innerHTML = written_descrips;
                 event.target.style.color = "white";
@@ -196,20 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // TODO UN-COMMENT!
+    // GLITCH WHEN SCROLL
     let scrollTimeout;
-    window.addEventListener('scroll', function(){
-        let allGlitches = document.querySelectorAll('.glitch');
-        allGlitches.forEach(glitch => {
-            glitch.style.visibility = 'visible';
-        });
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function(){
-            allGlitches.forEach(glitch => {
-                glitch.style.visibility = 'hidden';
-            });
-        }, 800); // show/hide after X seconds of inactivity
-    }); 
+    addGlitchScroller(scrollTimeout);
 
     // AUDIO AUDIO AUDIO
     // AUDIO AUDIO AUDIO
