@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             thisGlitch.style.left = glitch_box_dict[key].left;
             thisGlitch.style.width = glitch_box_dict[key].width;
             thisGlitch.style.height = glitch_box_dict[key].height;
-            thisGlitch.style.animation = 'fadeInOut 3s 1 ease-in';
+            // thisGlitch.style.animation = 'fadeInOut 3s 1 ease-in';
             thisGlitch.style.filter = glitch_box_dict[key].filter;
             glitchBox.appendChild(thisGlitch);
             console.log('appended a glitch'); 
@@ -63,13 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const images = glitchBox.querySelectorAll("img");
         let currIndex = 0;
         function cycleImages(){
+            console.log(`currIndex: ${currIndex}`);
+            let prevIndex = (currIndex-1+images.length)%images.length;
+            console.log(`prevIndex: ${prevIndex}`); 
+            images[prevIndex].classList.remove("active"); 
             images[currIndex].classList.add("active");
-            setTimeout(function(){
-                images[currIndex].classList.remove("active");
-            }, 100); 
             currIndex = (currIndex+1)%images.length;
         }
-        setInterval(cycleImages, 3000); // 1 second per image
+        setInterval(cycleImages, 1000); // 1 second per image
     }
 
     // BASAL GLITCHES
