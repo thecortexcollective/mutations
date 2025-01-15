@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCALING
     function scalePage(){
         const vw = window.innerWidth;
+        const vh = window.innerHeight;
         const main = document.querySelector('main');
         let scaleFactor = 1;
         if (vw >= 700){
             scaleFactor = (vw - 80) / 600;
         }
         main.style.transform = `scale(${scaleFactor})`;
+        main.style.height = `${vh / scaleFactor}px`;
         // const pdf = document.getElementById('pdf');
         // if (pdf){
         //     pdf.style.transform = `scale(${scaleFactor})`; 

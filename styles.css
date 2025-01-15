@@ -152,7 +152,6 @@ a {
 
 main {
     max-width: 400px;
-    min-height: 100vh;
     margin: 0px 20px;
     position: relative;
     z-index: 1;
