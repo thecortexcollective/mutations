@@ -174,6 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // HOMEPAGE GLITCHBOX
     const glitchBox = document.getElementById('glitch-box');
     if (typeof glitch_box_dict !== 'undefined' && glitch_box_dict !== null){
+
+        // GLITCH BOX DICT
+        // GLITCH BOX DICT
         console.log('glitch_box_dict exists');
         for (const key in glitch_box_dict){
             let thisGlitch = document.createElement('img');
@@ -182,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
             thisGlitch.style.left = glitch_box_dict[key].left;
             thisGlitch.style.width = glitch_box_dict[key].width;
             thisGlitch.style.height = glitch_box_dict[key].height;
-            // thisGlitch.style.animation = 'fadeInOut 3s 1 ease-in';
             thisGlitch.style.filter = glitch_box_dict[key].filter;
             glitchBox.appendChild(thisGlitch);
             console.log('appended a glitch'); 
@@ -198,7 +200,21 @@ document.addEventListener('DOMContentLoaded', () => {
             images[currIndex].classList.add("active");
             currIndex = (currIndex+1)%images.length;
         }
-        setInterval(cycleImages, 1000); // 1 second per image
+        setInterval(cycleImages, 500); // 1 second per image
+
+        // GLITCH BORDER DICT
+        // GLITCH BORDER DICT
+        for (const key in glitch_border_dict){
+            let thisGlitch = document.createElement('img');
+            thisGlitch.src = glitch_border_dict[key].src;
+            thisGlitch.style.width = '100%';
+            thisGlitch.style.height = '100%';
+            thisGlitch.style.filter = glitch_border_dict[key].filter;
+            thisGlitch.style.display = 'block';
+            thisGlitch.style.opacity = '0.3';
+            glitchBox.appendChild(thisGlitch);
+            console.log('appended a glitch'); 
+        }
     }
 
     // WRITTEN WRITTEN WRITTEN

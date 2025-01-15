@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <script>
+    const glitch_border_dict = {
+        seashells: {
+            src: `glitches/kane/seashells.png`,
+            filter: `saturate(5) invert(1) hue-rotate(90deg)`,
+        }, 
+        sapwood: {
+            src: `glitches/kane/sapwood.png`,
+            filter: `saturate(8)`,
+        }, 
+    }
     const glitch_box_dict = {
         butterfly: {
             src: `glitches/mara/butterfly.png`,
@@ -15,6 +25,15 @@
             top: '15%', 
             left: '15%',
             filter: `saturate(8) `,
+        },
+        muta: {
+            src: `glitches/kane/muta.png`,
+            width: '80%',
+            height: '80%',
+            top: '10%', 
+            left: '10%',
+            filter: `saturate(8) 
+                    hue-rotate(270deg)`,
         },
         rose: {
             src: `glitches/mara/rose.png`,
@@ -33,6 +52,90 @@
             left: '12%',
             filter: `saturate(8) 
                     hue-rotate(90deg)`,
+        },
+        
+        eyes: {
+            src: `glitches/mara/eyes.png`,
+            width: '80%',
+            height: '80%',
+            top: '12%', 
+            left: '8%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+        },
+        blood: {
+            src: `glitches/mara/blood.png`,
+            width: '40%',
+            height: '40%',
+            top: '35%', 
+            left: '30%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+        },
+        ahh: {
+            src: `glitches/mara/ahh.png`,
+            width: '70%',
+            height: '50%',
+            top: '30%', 
+            left: '15%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+        },
+        card: {
+            src: `glitches/mara/card.png`,
+            width: '60%',
+            height: '80%',
+            top: '10%', 
+            left: '20%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+        },
+        teeth: {
+            src: `glitches/kane/teeth.png`,
+            width: '60%',
+            height: '80%',
+            top: '10%', 
+            left: '20%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+        },
+        wizard: {
+            src: `glitches/kane/wizard.png`,
+            width: '80%',
+            height: '60%',
+            top: '20%', 
+            left: '10%',
+            filter: `saturate(1) 
+                    hue-rotate(0deg)`,
+        },
+        carcrash: {
+            src: `glitches/kane/carcrash.png`,
+            width: '80%',
+            height: '50%',
+            top: '25%', 
+            left: '10%',
+            filter: `saturate(8) 
+                    hue-rotate(0deg)`,
+        },
+        vial: {
+            src: `glitches/home/vial.png`,
+            width: '50%',
+            height: '80%',
+            top: '10%', 
+            left: '25%',
+            filter: `saturate(8) 
+                    hue-rotate(270deg)
+                    invert(1)`,
+        },
+        lanaisthatyou: {
+            src: `glitches/home/lanaisthatyou.png`,
+            width: '80%',
+            height: '80%',
+            top: '10%', 
+            left: '25%',
+            filter: `saturate(8) 
+                    hue-rotate(270deg)
+                    invert(1)`,
         },
     }
 
@@ -77,9 +180,9 @@
             <!-- AUDIO SOURCE -->
         </audio>
         <p>The <em>mutation(s)</em> main theme was jointly composed
-        by Jack Davisson, Diana Omar, and David
-        Garsten, and performed live at the installation along with
-        Chris Shia and Mina Chang.
+        by jack davisson, diana omar, and david
+        garsten, and performed live at the installation along with
+        chris shia and mina chang.
         <a href="" style="display: none">Watch us play here.</a></p>
         <!-- ADD AFTER INSTALLATION -->
 
@@ -87,14 +190,9 @@
 
         <!-- <img src="visuals/butterfly.PNG" style="margin-bottom: 0px;">
         IMAGE SOURCE -->
-        <p>The flashing images you will see on this website were drawn
-            by cortex editors on <em>Doodle Day</em>, where we print
-            out all of the written pieces, doodle over them, and
-            then scan the results.
-        </p>
-        <p style="text-align: center">(Strobe warning.)</p>
-        <p>
-            This website was coded by David Garsten from scratch.
+        <p>The flashing images you will see on this website were all drawn
+            by cortex editors, and the website itself was coded by david garsten
+            from scratch.
         </p>
         <a href="i.html" target="_blank">
             <!-- FORWARDLINK -->
