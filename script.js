@@ -1,15 +1,60 @@
 let pattern = 'strobe', patternIndex = 0; 
 const patterns = ['strobe', 'stay', 'shift', 'stop'];
+const dictionaries = {};
+if (typeof i_dict !== 'undefined') {
+    dictionaries['i'] = i_dict;
+}
+if (typeof ii_dict !== 'undefined') {
+    dictionaries['ii'] = ii_dict;
+}
+if (typeof iii_dict !== 'undefined') {
+    dictionaries['iii'] = iii_dict;
+}
+if (typeof iv_dict !== 'undefined') {
+    dictionaries['iv'] = iv_dict;
+}
+console.log(dictionaries); 
 let scrollTimeout;
 const glitchButton = document.getElementById('glitch-button');
 newPattern();
 
 function newPattern(){
+    // UPDATE PATTERN
     patternIndex = (patternIndex + 1) % patterns.length;
     console.log(`updating pattern from ${pattern} to ${patterns[patternIndex]}`); 
     pattern = patterns[patternIndex];
     glitchButton.innerHTML = patterns[(patternIndex + 1) % patterns.length];
-    document.dispatchEvent(new Event('DOMContentLoaded'));
+
+    // RESET GLITCHES
+    let allGlitches = document.querySelectorAll('.glitch');
+    allGlitches.forEach(div => div.remove());
+
+    // BASAL GLITCHES
+    // BASAL GLITCHES
+    let main = document.querySelector('main');
+    if (typeof page_dict !== 'undefined' && page_dict !== null){
+        console.log("not on homepage"); 
+        basalGlitches(page_dict, main);
+    }
+
+    // WRITTEN GLITCHES
+    // WRITTEN GLITCHES
+    const writtens = document.querySelectorAll('.written');
+    writtens.forEach(button => {
+        console.log(`for button ${button.id}`);
+        if (button.dataset.clicked == "true"){
+            console.log("button is clicked"); 
+            const glitch_dict = dictionaries[button.id] || undefined;
+            console.log(`glitch_dict is ${glitch_dict}`); 
+            let pdf = document.getElementById('pdf');
+            writtenGlitches(glitch_dict, pdf); 
+        } else {
+            console.log("button is unclicked"); 
+        }
+    }); 
+
+    // GLITCH WHEN SCROLL
+    addGlitchScroller();
 }
 
 function handleScroll(){
@@ -82,9 +127,6 @@ function writtenGlitches(glitch_dict, pdf){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // RESET GLITCHES
-    let allGlitches = document.querySelectorAll('.glitch');
-    allGlitches.forEach(div => div.remove());
 
     // SCALING
     function scalePage(){
@@ -157,13 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
             currIndex = (currIndex+1)%images.length;
         }
         setInterval(cycleImages, 1000); // 1 second per image
-    }
-
-    // BASAL GLITCHES
-    // BASAL GLITCHES
-    let main = document.querySelector('main');
-    if (typeof page_dict !== 'undefined' && page_dict !== null){
-        basalGlitches(page_dict, main);
     }
 
     // WRITTEN WRITTEN WRITTEN
