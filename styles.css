@@ -203,7 +203,9 @@ nav {
 .glitch {
     position: absolute;
     z-index: 10;
-    pointer-events: none;
+}
+.glitch:hover {
+    visibility: hidden; 
 }
 .glitch img {
     border: none;
