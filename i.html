@@ -41,7 +41,20 @@
             shift: 'hueRotate 1.9s infinite'
         },
     }
-    const iii_dict = {}
+    const iii_dict = {
+        carcrash: {
+            src: `glitches/kane/carcrash.png`,
+            width: '30%',
+            height: '4%',
+            left: '79%',
+            top: '5%',
+            filter: `saturate(5)
+                    hue-rotate(270deg)
+                    invert(1)`,
+            strobe: 'strobe2 0.2s infinite', 
+            shift: 'hueRotate 2s infinite'
+        },
+    }
     const ii_dict = {
         sap: {
             src: `glitches/kane/sap.png`,
@@ -135,18 +148,6 @@
                     invert(1)`,
             strobe: 'strobe1 0.35s infinite', 
             shift: 'hueRotate 3.5s infinite'
-        },
-        carcrash: {
-            src: `glitches/kane/carcrash.png`,
-            width: '25%',
-            height: '2%',
-            left: '79%',
-            top: '58.2%',
-            filter: `saturate(5)
-                    hue-rotate(90deg)
-                    invert(1)`,
-            strobe: 'strobe2 0.2s infinite', 
-            shift: 'hueRotate 2s infinite'
         },
         scroll: {
             src: `glitches/kane/scroll.png`,
