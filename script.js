@@ -16,7 +16,9 @@ if (typeof iv_dict !== 'undefined') {
 console.log(dictionaries); 
 let scrollTimeout;
 const glitchButton = document.getElementById('glitch-button');
-newPattern();
+if (glitchButton != null){
+    newPattern();
+}
 
 function newPattern(){
     // UPDATE PATTERN

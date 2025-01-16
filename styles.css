@@ -143,6 +143,7 @@ a {
 #carousel-container {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 #carousel {
     position: relative;

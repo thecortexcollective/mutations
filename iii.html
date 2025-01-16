@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how it started</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    const page_dict = {
+        butterfly: {
+            src: `glitches/mara/butterfly.png`,
+            width: '20%',
+            height: '20%',
+            left: '-15%',
+            top: '0%',
+            filter: `saturate(8) `,
+            strobe: 'strobe3 0.5s infinite', 
+            shift: 'hueRotate 5s infinite'
+        },
+        rose: {
+            src: `glitches/mara/rose.png`,
+            width: '30%',
+            height: '20%',
+            left: '85%',
+            top: '10%',
+            filter: `saturate(5)
+                    hue-rotate(280deg)`,
+            strobe: 'strobe1 0.4s infinite', 
+            shift: 'hueRotate 4s infinite'
+        },
+        floater: {
+            src: `glitches/mara/floater.png`,
+            width: '20%',
+            height: '20%',
+            left: '60%',
+            top: '80%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+    }
+    const ii_dict = {
+        
+    }
+    const i_dict = {
+        
+    }
+    const visartShort = `<i>The Creature</i> by Carlo Barton`;
+    const visartStatement = `Carlo's artist statement will go here.`; 
+    const musicShort = `<i>Bells</i> by Jack Davisson`;
+    const musicStatement = `I wanted to write a piece that evolves throughout 
+    its duration while maintaining some elements of stability. The interplay 
+    between the different melodic instruments changes in mood as the piece moves 
+    forward, yet the sound is always anchored by the deep bells in the bass line.`;
+    const ii_statement = 
+        `<div class="statement-holder">
+            <br><br>
+            <button id="ii-button" onclick="toggle('ii-statement');">
+                <i>One nation, under God, indivisible, of cyborgs...
+                    </i> by Araddhya Tibrewall.
+            </button>
+            <p class="statement" id="ii-statement">
+                Borrowing the title of Donna Harroway’s work and the 
+                concept from Marx, I take a stab at writing the Cyborg 
+                Manifesto, imagining a nation of cyborgs—these half-human, 
+                half-robot creatures—that may just dominate our futures. 
+                My work traces the future: from the decisive day—that 
+                promised day of transformation—when we mutate into these 
+                beautiful, horrifying forms, to the aftermath, a brand 
+                new society. A society that must follow some rules. What 
+                rules? In creating these rules, I frame this future as 
+                existing at some sort of unstable equilibrium. Just as 
+                it’s impossible for a cyborg’s body to be exactly fifty 
+                percent flesh and fifty percent metal, is it possible 
+                for there to be equality between human and machine? 
+                This project is all to the end of asking: Could we ever 
+                survive? Is this future even POSSIBLE?
+            </p>
+        </div>`;
+    const i_statement = 
+        `<div class="statement-holder">
+            <br><br>
+            <button id="i-button" onclick="toggle('i-statement');">
+                <i>Aquatica</i> by David Garsten
+            </button>
+            <p class="statement" id="i-statement">
+                Inspired by the art of Santiago Ramón y Cajal and the Aquatic
+                Ape Hypothesis, <i>Aquatica</i>
+                consists of a letter and a prayer, unearthed from the waters
+                of humanity's dystopian future. 
+            </p>
+        </div>`;
+    const iv_statement = ``;
+
+    const written_descrips = `<p>
+                    i. <i>Aquatica</i> by David Garsten <br>
+                    ii. <i>One nation, under God, indivisible, of cyborgs...
+                        </i> by Araddhya Tibrewall.<br>
+                </p>`;
+    const path_to_i = `pdfs/david.png`;
+    const path_to_ii = `pdfs/araddhya.png`;
+    const path_to_iii = ``;
+    const path_to_iv = ``;
+
+    // TOGGLE VISIBILITY BY ID
+    function toggle(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }; 
+</script>
+<body>
+    <div id="navbar">
+        <div id="cortex">
+            <a href="https://www.instagram.com/cortexyale/">
+            cortex</a>
+        </div>
+        <nav>
+            <button onclick="window.open('https://cortexmagazine.com/who-we-are', '_blank');">about us</button>
+            <button onclick="window.open('https://cortexmagazine.com', '_blank');">homepage</button>
+            <button onclick="window.open('https://cortexmagazine.com/events', '_blank');">events</button>
+            <button onclick="window.open('https://cortexmagazine.com/contact', '_blank');">contact</button>
+            <button id="glitch-button" onclick="newPattern();"></button>
+        </nav> 
+    </div>
+    <main>
+        <header>
+            <a href="/ii.html">
+                <h1><- how it started</h1>
+                <!-- TITLE and BACKLINK-->
+            </a>
+        </header>
+        <div id="player">
+            <div id="playpause">
+                <img src="images/play-pause-button.png">
+            </div>
+            <div id="progress-container">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <audio id="sound" controls preload class="remove">
+            <source src="audio/bells.mp3" type="audio/mp3"> 
+            <!-- AUDIO SOURCE -->
+        </audio>
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="music-button" onclick="toggle('music');"></button>
+            <p class="statement" id="music"></p>
+        </div>
+
+        <div id="carousel-container" style="margin-bottom: 17px;">
+            <div id="carousel">
+                <div class="item active">
+                    <img src="visuals/carlo/a.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/carlo/b.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/carlo/c.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/carlo/d.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/carlo/e.jpg">
+                </div>
+            </div>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+        
+        <!-- IMAGE SOURCE -->
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="visart-button" onclick="toggle('visart');"></button>
+            <p class="statement" id="visart"></p>
+        </div>
+
+        <div>
+            <nav style="flex-direction: row;" id="written-nav">
+                <button class="written" id="i" data-clicked="false">i</button>
+                <button class="written" id="ii" data-clicked="false">ii</button>
+            </nav> 
+        </div>
+        <div id="pdf-box"></div>
+        <div id="filler"></div>
+    </main>
+    <footer>
+        <a href="cortexmagazine.github.io/mutations" target="_blank">
+            <!-- FORWARDLINK -->
+            <h3>mutation(s) -></h3>
+        </a>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
