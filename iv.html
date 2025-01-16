@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how it will end</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    const page_dict = {
+        butterfly: {
+            src: `glitches/mara/butterfly.png`,
+            width: '20%',
+            height: '20%',
+            left: '-15%',
+            top: '0%',
+            filter: `saturate(8) `,
+            strobe: 'strobe3 0.5s infinite', 
+            shift: 'hueRotate 5s infinite'
+        },
+        rose: {
+            src: `glitches/mara/rose.png`,
+            width: '30%',
+            height: '20%',
+            left: '85%',
+            top: '10%',
+            filter: `saturate(5)
+                    hue-rotate(280deg)`,
+            strobe: 'strobe1 0.4s infinite', 
+            shift: 'hueRotate 4s infinite'
+        },
+        floater: {
+            src: `glitches/mara/floater.png`,
+            width: '20%',
+            height: '20%',
+            left: '60%',
+            top: '80%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+    }
+    const ii_dict = {
+        
+    }
+    const i_dict = {
+        
+    }
+    const visartShort = `<i>Making an 1888 Corset</i> by Cozette Weng`;
+    const visartStatement = `Imagine you tried to recreate everything you're 
+    wearing from scratch. Try to name every skill, bit of research, and 
+    material you'd need to learn and source.  This is the first part of my 
+    expanded project attempting to create an 1888 English woman's day 
+    ensemble according to historical methods. The capital and labor in 
+    making this single corset that would have been everyday wear in the 
+    late Victorian period—three months of work, hundreds of dollars, 
+    multiple trips to the Manhattan fashion district—forces me to 
+    reckon with the mutation of our societal attitudes toward clothing 
+    and material goods as things that both appear and can be discarded 
+    equally easily. The calluses that now pepper my fingers are their 
+    own mutation. My body has adjusted to this work to perform it with 
+    less pain. We're good at adapting to work efficiently. Now, a ridiculous 
+    question: Does thicker skin make the corset less valuable?`; 
+    const musicShort = `<i>Neonocturne</i> by Orion Shtrezi`;
+    const musicStatement = `“Neonocturne” is a love-letter to the evolution 
+    of music, a journey of musical mutation. It begins in a familiar place: 
+    a frantic whirlwind of strings, a dizzying display of orchestral power - 
+    only to be driven to a fever pitch by the arrival of pounding drums. 
+    Then, the mutation occurs. Electronic elements emerge, not as an addition, 
+    but as a transformation, twisting the established order into something 
+    new and electrifying. "Neonocturne" is a sonic depiction of organic 
+    sound evolving into a vibrant, digital future.`;
+    const ii_statement = 
+        `<div class="statement-holder">
+            <br><br>
+            <button id="ii-button" onclick="toggle('ii-statement');">
+                <i>Ernaux and Alzheimer's</i> by Max Smith
+            </button>
+            <p class="statement" id="ii-statement">
+                Max's artist statement will go here if he responds to stuff.
+            </p>
+        </div>`;
+    const i_statement = 
+        `<div class="statement-holder">
+            <br><br>
+            <button id="i-button" onclick="toggle('i-statement');">
+                <i>The Recovered Logbook of the Ex-Metalsmith Corvus Ptole
+                </i> by Chloe Alfonso
+            </button>
+            <p class="statement" id="i-statement">
+                This piece follows the life of a metalsmith in a 
+                future where humanity has reached the stars, in the 
+                form of a log book. The protagonist, Corvus, descends 
+                into madness, and, in reading the log book—the story 
+                of his unraveling and his genius—we are participating 
+                in the trend of a society fixated on chaos and 
+                destruction, especially of artists (think Sylvia 
+                Plath or Van Gogh). I imagine that this recovered 
+                logbook would have been highly circulated in Corvus’s 
+                world. Mutations are not just technical (though that, 
+                too, is demonstrated in his creations) but psychological. 
+                The ending is meant to be ambiguous. We do not know what 
+                lies on the other side of the portal; in the same vein, 
+                we are left to wonder whether Corvus’s transformation 
+                has led to a breakthrough or a surrender to madness.  
+            </p>
+        </div>`;
+    const iv_statement = ``;
+
+    const written_descrips = `<p>
+                    i. <i>The Recovered Logbook of the Ex-Metalsmith Corvus Ptole
+                        </i> by Chloe Alfonso. <br>
+                    ii. <i>Ernaux and Alzheimer's</i> by Max Smith.<br>
+                </p>`;
+    const path_to_i = `pdfs/chloea.png`;
+    const path_to_ii = `pdfs/maxs.png`;
+    const path_to_iii = ``;
+    const path_to_iv = ``;
+
+    // TOGGLE VISIBILITY BY ID
+    function toggle(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }; 
+</script>
+<body>
+    <div id="navbar">
+        <div id="cortex">
+            <a href="https://www.instagram.com/cortexyale/">
+            cortex</a>
+        </div>
+        <nav>
+            <button onclick="window.open('https://cortexmagazine.com/who-we-are', '_blank');">about us</button>
+            <button onclick="window.open('https://cortexmagazine.com', '_blank');">homepage</button>
+            <button onclick="window.open('https://cortexmagazine.com/events', '_blank');">events</button>
+            <button onclick="window.open('https://cortexmagazine.com/contact', '_blank');">contact</button>
+            <button id="glitch-button" onclick="newPattern();"></button>
+        </nav> 
+    </div>
+    <main>
+        <header>
+            <a href="/iii.html">
+                <h1><- how it will end</h1>
+                <!-- TITLE and BACKLINK-->
+            </a>
+        </header>
+        <div id="player">
+            <div id="playpause">
+                <img src="images/play-pause-button.png">
+            </div>
+            <div id="progress-container">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <audio id="sound" controls preload class="remove">
+            <source src="audio/neonocturne.mp3" type="audio/mp3"> 
+            <!-- AUDIO SOURCE -->
+        </audio>
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="music-button" onclick="toggle('music');"></button>
+            <p class="statement" id="music"></p>
+        </div>
+
+        <div id="carousel-container" style="margin-bottom: 17px;">
+            <div id="carousel">
+                <div class="item active">
+                    <img src="visuals/cozette/a.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/cozette/b.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/cozette/c.jpg">
+                </div>
+            </div>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+        
+        <!-- IMAGE SOURCE -->
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="visart-button" onclick="toggle('visart');"></button>
+            <p class="statement" id="visart"></p>
+        </div>
+
+        <div>
+            <nav style="flex-direction: row;" id="written-nav">
+                <button class="written" id="i" data-clicked="false">i</button>
+                <button class="written" id="ii" data-clicked="false">ii</button>
+            </nav> 
+        </div>
+        <div id="pdf-box"></div>
+        <div id="filler"></div>
+    </main>
+    <footer>
+        <a href="/v.html" target="_blank">
+            <!-- FORWARDLINK -->
+            <h3>mutation(s) -></h3>
+        </a>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
