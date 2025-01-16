@@ -156,8 +156,9 @@ a {
 .item img {
     object-fit: cover;
     object-fit: center;
-    width: 100%;
+    width: calc(100% - 2px);
     height: 100%;
+    border: 2px solid white;
 }
 .item.active {
     opacity: 1;
