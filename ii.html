@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how we dreamed of each other</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    const page_dict = {
+        butterfly: {
+            src: `glitches/mara/butterfly.png`,
+            width: '20%',
+            height: '20%',
+            left: '-15%',
+            top: '0%',
+            filter: `saturate(8) `,
+            strobe: 'strobe3 0.5s infinite', 
+            shift: 'hueRotate 5s infinite'
+        },
+        rose: {
+            src: `glitches/mara/rose.png`,
+            width: '30%',
+            height: '20%',
+            left: '85%',
+            top: '10%',
+            filter: `saturate(5)
+                    hue-rotate(280deg)`,
+            strobe: 'strobe1 0.4s infinite', 
+            shift: 'hueRotate 4s infinite'
+        },
+        floater: {
+            src: `glitches/mara/floater.png`,
+            width: '20%',
+            height: '20%',
+            left: '60%',
+            top: '80%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+    }
+    const ii_dict = {
+        
+    }
+    const i_dict = {
+        
+    }
+    const visartShort = `<i>Metamorphoses</i> by Sophie Mo`;
+    const visartStatement = `Mutations often lead us to think about the 
+    “what could have beens”. The distortion of each image represents the 
+    same as faces are erased, doubled up, and layered. What happens when 
+    each counterfactual mutation comes to the forefront? Can we even discern 
+    what it has become? `; 
+    const musicShort = `<i>Inside Antheraea Yamamai</i> by David Garsten`;
+    const musicStatement = `<i>Inside Antheraea Yamamai</i> is a live reading
+        of Japanese Silk Moth DNA through an interactive DNA-synthesizer I created
+        with javascript and tone.js,
+        <button 
+        onclick="window.open
+        ('https://dudugan.github.io/interdesign/nucleica/interface.html', '_blank');">
+        accessible here</button>.`;
+    const ii_statement = 
+        `<div class="statement-holder">
+            <br><br>
+            <button id="ii-button" onclick="toggle('ii-statement');">
+                <i>Slumber</i> by Richard Zheng
+            </button>
+            <p class="statement" id="ii-statement">
+                Read my artist's statement at the bottom!
+            </p>
+        </div>`;
+    const i_statement = 
+        `<div class="statement-holder">
+            <br><br>
+            <button id="i-button" onclick="toggle('i-statement');">
+                <i>field notes from high school biology</i> by Chloe Prasetya
+            </button>
+            <p class="statement" id="i-statement">
+                My piece explores biological mutations, which are visually 
+                embedded in the fossil record. I learned about Archaeopteryx 
+                being a transitional fossil, or an intermediary form that occurs 
+                over the evolutionary pathway of a genus. It possesses both the 
+                characteristics of its ancestor and its descendants, providing 
+                evidence for evolution–in the case of Archaeopteryx, from 
+                prehistoric reptiles to birds. I started wondering what it 
+                would be like to inhabit liminality. What vestiges of ourselves 
+                do we hold onto, and what do we leave behind? Continuing to 
+                research transitional fossils, I realized discourse on them was 
+                fraught. Creationists believe that God created each creature to 
+                perfection (‘it is good’), leaving no need for evolution or 
+                transitional forms. I reflected on this as it intersected with 
+                my Sunday school upbringing and current, more skeptical self. 
+                What does it mean to accept the existence of such fossils–that 
+                God's creation was imperfect at its origin?
+            </p>
+        </div>`;
+    const iv_statement = ``;
+
+    const written_descrips = `<p>
+                    i. <i>field notes from high school biology</i> by Chloe Prasetya <br>
+                    ii. <i>Slumber</i> by Richard Zheng.<br>
+                </p>`;
+    const path_to_i = `pdfs/chloep.png`;
+    const path_to_ii = `pdfs/richard.png`;
+    const path_to_iii = ``;
+    const path_to_iv = ``;
+
+    // TOGGLE VISIBILITY BY ID
+    function toggle(id) {
+        const element = document.getElementById(id);
+        element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }; 
+</script>
+<body>
+    <div id="navbar">
+        <div id="cortex">
+            <a href="https://www.instagram.com/cortexyale/">
+            cortex</a>
+        </div>
+        <nav>
+            <button onclick="window.open('https://cortexmagazine.com/who-we-are', '_blank');">about us</button>
+            <button onclick="window.open('https://cortexmagazine.com', '_blank');">homepage</button>
+            <button onclick="window.open('https://cortexmagazine.com/events', '_blank');">events</button>
+            <button onclick="window.open('https://cortexmagazine.com/contact', '_blank');">contact</button>
+            <button id="glitch-button" onclick="newPattern();"></button>
+        </nav> 
+    </div>
+    <main>
+        <header>
+            <a href="cortexmagazine.github.io/mutations" target="_blank">
+                <h1><- how we dreamed of each other</h1>
+                <!-- TITLE and BACKLINK-->
+            </a>
+        </header>
+        <div id="player">
+            <div id="playpause">
+                <img src="images/play-pause-button.png">
+            </div>
+            <div id="progress-container">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <audio id="sound" controls preload class="remove">
+            <source src="audio/parasitosis.wav" type="audio/wav"> 
+            <!-- AUDIO SOURCE -->
+        </audio>
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="music-button" onclick="toggle('music');"></button>
+            <p class="statement" id="music"></p>
+        </div>
+
+        <div id="carousel-container" style="margin-bottom: 17px;">
+            <div id="carousel">
+                <div class="item active">
+                    <img src="visuals/sophie/sophie.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/sophie/ghost.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/sophie/stella.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/sophie/emma.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/sophie/bea.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/sophie/miriam.jpg">
+                </div>
+                <div class="item">
+                    <img src="visuals/sophie/katie.jpg">
+                </div>
+            </div>
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+        
+        <!-- IMAGE SOURCE -->
+        <div class="statement-holder">
+            <div class="equals-sign"></div>
+            <button id="visart-button" onclick="toggle('visart');"></button>
+            <p class="statement" id="visart"></p>
+        </div>
+
+        <div>
+            <nav style="flex-direction: row;" id="written-nav">
+                <button class="written" id="i" data-clicked="false">i</button>
+                <button class="written" id="ii" data-clicked="false">ii</button>
+            </nav> 
+        </div>
+        <div id="pdf-box"></div>
+        <div id="filler"></div>
+    </main>
+    <footer>
+        <a href="cortexmagazine.github.io/mutations" target="_blank">
+            <!-- FORWARDLINK -->
+            <h3>mutation(s) -></h3>
+        </a>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

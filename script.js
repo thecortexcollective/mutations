@@ -148,6 +148,33 @@ document.addEventListener('DOMContentLoaded', () => {
     scalePage();
     window.addEventListener('resize', scalePage);
 
+    // CAROUSEL?
+    let carousel = document.getElementById('carousel');
+    if (carousel != null){
+        console.log("there is a carousel");
+        let items = carousel.querySelectorAll(".item");
+        function showItem(index){
+            items.forEach((item, idx) => {
+                item.classList.remove("active");
+                if (idx === index){
+                    item.classList.add("active");
+                }
+            }); 
+        }
+        document.getElementById("prev").addEventListener("click", () => {
+            let index = [...items].findIndex((item) =>
+                item.classList.contains("active")
+            ); 
+            showItem((index-1+items.length)%items.length);
+        });
+        document.getElementById("next").addEventListener("click", () => {
+            let index = [...items].findIndex((item) =>
+                item.classList.contains("active")
+            ); 
+            showItem((index+1)%items.length);
+        });
+    }
+
     // POPULATING
     const musicButton = document.getElementById('music-button');
     if (musicButton !== null){
