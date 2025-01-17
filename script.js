@@ -104,7 +104,14 @@ function basalGlitches(page_dict, main){
         } else {
             thisGlitch.firstChild.style.animation = `${page_dict[key][pattern]}`;
         }
-        thisGlitch.style.filter = `${page_dict[key].filter}`;  
+        thisGlitch.style.filter = `${page_dict[key].filter}`;
+        
+        // thisGlitch.addEventListener('mouseover', () => {
+        //     thisGlitch.classList.add('hidden'); 
+        // });
+        // thisGlitch.addEventListener('mouseleave', () => {
+        //     thisGlitch.classList.remove('hidden'); 
+        // });
         main.appendChild(thisGlitch);
     }
 }

@@ -60,6 +60,8 @@
     display: none;
 }
 #player {
+    position: relative;
+    z-index: 20;
     font-family: monospace; /* so that the em works bruh */
     display: flex;
     justify-content: flex-start;
@@ -202,19 +204,6 @@ h3 {
     text-align: center;
 }
 
-#navbar {
-    position: fixed;
-    display: flex;
-    gap: 5px; 
-    z-index: 4;
-}
-
-nav {
-    display: flex; 
-    gap: 5px; 
-    z-index: 5;
-}
-
 #pdf-box {
     margin: 10px 0px;
     z-index: 2;
@@ -228,10 +217,12 @@ nav {
 }
 .glitch {
     position: absolute;
-    z-index: 10;
 }
-.glitch:hover {
+.glitch:hover img
+/*, .glitch.hidden  */
+{
     visibility: hidden; 
+    pointer-events: none;
 }
 .glitch img {
     border: none;
@@ -310,6 +301,8 @@ footer {
 }
 
 button {
+    z-index: 20; 
+    position: relative;
     border-style: outset;
     border-width: 2px;
     border-color: white; 
@@ -357,14 +350,18 @@ button:hover {
 
 }
 
-nav, #navbar {
-    flex-direction: column-reverse;
-}
 #navbar {
+    position: fixed;
     right: 10px;
     bottom: 50px; 
     left: auto; 
     font-size: clamp(16px, 2.7vw, 30px);
+    z-index: 15;
+}
+nav, #navbar {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px; 
 }
 #navbar nav button {
     font-size: clamp(16px, 2.7vw, 30px);
