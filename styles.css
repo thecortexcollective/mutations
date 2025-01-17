@@ -243,11 +243,13 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
     width: 70%;
+    left: 50%;
     aspect-ratio: 1;
     position: relative;
-    left: 50%;
+    border: 2px solid white;
+    aspect-ratio: 1;
+    position: relative;
     transform: translateX(-50%); 
     overflow: hidden;
     text-align: center;

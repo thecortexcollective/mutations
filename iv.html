@@ -8,44 +8,239 @@
 </head>
 <script>
     const page_dict = {
-        butterfly: {
-            src: `glitches/mara/butterfly.png`,
+        f: {
+            src: `glitches/araddhya/f.png`,
             width: '20%',
-            height: '20%',
-            left: '-15%',
-            top: '0%',
-            filter: `saturate(8) `,
+            height: '10%',
+            left: '-10%',
+            top: '1%',
+            filter: `saturate(8) invert(1)`,
             strobe: 'strobe3 0.5s infinite', 
             shift: 'hueRotate 5s infinite'
         },
-        rose: {
-            src: `glitches/mara/rose.png`,
+        clock: {
+            src: `glitches/chloea/clock.png`,
+            width: '20%',
+            height: '15%',
+            left: '80%',
+            top: '110%',
+            filter: `saturate(8) invert(1)`,
+            strobe: 'strobe3 0.5s infinite', 
+            shift: 'hueRotate 5s infinite'
+        },
+        spacestation: {
+            src: `glitches/chloea/spacestation.png`,
             width: '30%',
             height: '20%',
-            left: '85%',
-            top: '10%',
-            filter: `saturate(5)
-                    hue-rotate(280deg)`,
+            left: '-10%',
+            top: '70%',
+            filter: `saturate(5)`,
             strobe: 'strobe1 0.4s infinite', 
             shift: 'hueRotate 4s infinite'
         },
-        floater: {
-            src: `glitches/mara/floater.png`,
-            width: '20%',
-            height: '20%',
-            left: '60%',
-            top: '80%',
+        planet: {
+            src: `glitches/chloea/planet.png`,
+            width: '60%',
+            height: '40%',
+            left: '61%',
+            top: '-3%',
+            filter: `saturate(5)`,
+            strobe: 'strobe1 0.4s infinite', 
+            shift: 'hueRotate 4s infinite'
+        },
+    }
+    const i_dict = {
+        bowl: {
+            src: `glitches/chloea/bowl.png`,
+            width: '10%',
+            height: '1%',
+            left: '30%',
+            top: '0.7%',
             filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+                    hue-rotate(90deg)
+                    invert(0)`,
             strobe: 'strobe2 0.19s infinite', 
             shift: 'hueRotate 1.9s infinite'
         },
-    }
-    const ii_dict = {
+        spoon: {
+            src: `glitches/chloea/spoon.png`,
+            width: '20%',
+            height: '0.5%',
+            left: '30%',
+            top: '10%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        railroadman: {
+            src: `glitches/chloea/railroadman.png`,
+            width: '10%',
+            height: '0.5%',
+            left: '30%',
+            top: '14.5%',
+            filter: `saturate(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        origamiphoenix: {
+            src: `glitches/chloea/origamiphoenix.png`,
+            width: '30%',
+            height: '1.5%',
+            left: '50%',
+            top: '17%',
+            filter: `saturate(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        eyepoint: {
+            src: `glitches/chloea/eyepoint.png`,
+            width: '22%',
+            height: '1%',
+            left: '40%',
+            top: '18.5%',
+            filter: `saturate(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        lips: {
+            src: `glitches/chloea/lips.png`,
+            width: '25%',
+            height: '0.7%',
+            left: '22%',
+            top: '20.4%',
+            filter: `saturate(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        agons: {
+            src: `glitches/chloea/agons.png`,
+            width: '25%',
+            height: '1.4%',
+            left: '30%',
+            top: '22.1%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        element: {
+            src: `glitches/chloea/element.png`,
+            width: '20%',
+            height: '1%',
+            left: '20%',
+            top: '26.7%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        stardust: {
+            src: `glitches/chloea/stardust.png`,
+            width: '30%',
+            height: '0.6%',
+            left: '61%',
+            top: '29.1%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        flutter: {
+            src: `glitches/chloea/flutter.png`,
+            width: '25%',
+            height: '1%',
+            left: '50%',
+            top: '31%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        rack: {
+            src: `glitches/chloea/rack.png`,
+            width: '15%',
+            height: '0.4%',
+            left: '30%',
+            top: '35%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        visor: {
+            src: `glitches/chloea/visor.png`,
+            width: '30%',
+            height: '2.4%',
+            left: '60%',
+            top: '36%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        hexagon: {
+            src: `glitches/chloea/hexagon.png`,
+            width: '8%',
+            height: '0.8%',
+            left: '65%',
+            top: '46%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        forge: {
+            src: `glitches/chloea/forge.png`,
+            width: '8%',
+            height: '0.8%',
+            left: '50%',
+            top: '49.7%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        lightning: {
+            src: `glitches/chloea/lightning.png`,
+            width: '20%',
+            height: '2%',
+            left: '65%',
+            top: '41.5%',
+            filter: `saturate(8)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
         
-    }
-    const i_dict = {
-        
+        roses: {
+            src: `glitches/chloea/roses.png`,
+            width: '110%',
+            height: '9.25%',
+            left: '-5%',
+            top: '0%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        badswirls: {
+            src: `glitches/chloea/badswirls.png`,
+            width: '140%',
+            height: '11%',
+            left: '-17%',
+            top: '71.5%',
+            filter: `saturate(8) 
+                    hue-rotate(180deg)
+                    invert(1)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        swirls: {
+            src: `glitches/chloea/swirls.png`,
+            width: '140%',
+            height: '11%',
+            left: '-21%',
+            top: '89.6%',
+            filter: `saturate(8) 
+                    hue-rotate(180deg)
+                    invert(1)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
     }
     const visartShort = `<i>Making an 1888 Corset</i> by Cozette Weng`;
     const visartStatement = `Imagine you tried to recreate everything you're 
@@ -71,16 +266,6 @@
     but as a transformation, twisting the established order into something 
     new and electrifying. "Neonocturne" is a sonic depiction of organic 
     sound evolving into a vibrant, digital future.`;
-    const ii_statement = 
-        `<div class="statement-holder">
-            <br><br>
-            <button id="ii-button" onclick="toggle('ii-statement');">
-                <i>Ernaux and Alzheimer's</i> by Max Smith
-            </button>
-            <p class="statement" id="ii-statement">
-                Max's artist statement will go here if he responds to stuff.
-            </p>
-        </div>`;
     const i_statement = 
         `<div class="statement-holder">
             <br><br>
@@ -110,11 +295,10 @@
 
     const written_descrips = `<p>
                     i. <i>The Recovered Logbook of the Ex-Metalsmith Corvus Ptole
-                        </i> by Chloe Alfonso. <br>
-                    ii. <i>Ernaux and Alzheimer's</i> by Max Smith.<br>
+                        </i> by Chloe Alfonso.
                 </p>`;
     const path_to_i = `pdfs/chloea.png`;
-    const path_to_ii = `pdfs/maxs.png`;
+    const path_to_ii = ``;
     const path_to_iii = ``;
     const path_to_iv = ``;
 
@@ -190,7 +374,6 @@
         <div>
             <nav style="flex-direction: row;" id="written-nav">
                 <button class="written" id="i" data-clicked="false">i</button>
-                <button class="written" id="ii" data-clicked="false">ii</button>
             </nav> 
         </div>
         <div id="pdf-box"></div>
@@ -199,7 +382,7 @@
     <footer>
         <a href="/v.html" target="_blank">
             <!-- FORWARDLINK -->
-            <h3>mutation(s) -></h3>
+            <h3>the last page -></h3>
         </a>
     </footer>
     
