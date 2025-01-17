@@ -140,14 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const vh = window.innerHeight;
         const main = document.querySelector('main');
         let scaleFactor = 1;
-        if (vw >= 700){
+        if (1160 >= vw >= 700){
             scaleFactor = (vw - 80) / 600;
+        } else if (vw >= 1160){
+            scaleFactor = 1.6; 
         }
         main.style.transform = `scale(${scaleFactor})`;
         main.style.height = `${vh / scaleFactor}px`;
         // const pdf = document.getElementById('pdf');
         // if (pdf){
-        //     pdf.style.transform = `scale(${scaleFactor})`; 
+        //     pdf.style.transform = `scale(${scaleFactor+0.4})`; 
         //     // TODO this is the line that makes the pdf burst, good?
         // }
     }
