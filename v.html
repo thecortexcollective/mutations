@@ -8,18 +8,19 @@
 </head>
 <script>
     const page_dict = {
-        butterfly: {
-            src: `glitches/mara/butterfly.png`,
+        benedetta: {
+            src: `glitches/ece/benedetta.png`,
             width: '20%',
-            height: '20%',
-            left: '-15%',
+            height: '100%',
+            left: '-12%',
             top: '0%',
-            filter: `saturate(8) `,
-            strobe: 'strobe3 0.5s infinite', 
-            shift: 'hueRotate 5s infinite'
+            filter: `saturate(8) 
+                    hue-rotate(0deg)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
         },
-        rose: {
-            src: `glitches/mara/rose.png`,
+        ghost: {
+            src: `glitches/mina/ghost.png`,
             width: '30%',
             height: '20%',
             left: '85%',
@@ -29,23 +30,22 @@
             strobe: 'strobe1 0.4s infinite', 
             shift: 'hueRotate 4s infinite'
         },
-        floater: {
-            src: `glitches/mara/floater.png`,
-            width: '20%',
-            height: '20%',
-            left: '60%',
-            top: '80%',
-            filter: `saturate(8) 
-                    hue-rotate(90deg)`,
-            strobe: 'strobe2 0.19s infinite', 
-            shift: 'hueRotate 1.9s infinite'
-        },
     }
     const ii_dict = {
         
     }
     const i_dict = {
-        
+        skullfire: {
+            src: `glitches/ece/skullfire.png`,
+            width: '40%',
+            height: '100%',
+            left: '50%',
+            top: '0%',
+            filter: `saturate(1) 
+                    hue-rotate(0deg)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
     }
     const visartShort = `<i>Portraits of Wonder</i> by Chris Shia`;
     const visartStatement = `Does mutation always have to be terrifying? 
@@ -150,24 +150,6 @@
                 <!-- TITLE and BACKLINK-->
             </a>
         </header>
-        <div id="player">
-            <div id="playpause">
-                <img src="images/play-pause-button.png">
-            </div>
-            <div id="progress-container">
-                <div id="progress"></div>
-            </div>
-        </div>
-
-        <audio id="sound" controls preload class="remove">
-            <source src="audio/neonocturne.mp3" type="audio/mp3"> 
-            <!-- AUDIO SOURCE -->
-        </audio>
-        <div class="statement-holder">
-            <div class="equals-sign"></div>
-            <button id="music-button" onclick="toggle('music');"></button>
-            <p class="statement" id="music"></p>
-        </div>
 
         <img src="visuals/chris.gif" style="margin-bottom: 17px;">
         
