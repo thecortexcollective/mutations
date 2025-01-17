@@ -8,44 +8,214 @@
 </head>
 <script>
     const page_dict = {
-        butterfly: {
-            src: `glitches/mara/butterfly.png`,
-            width: '20%',
-            height: '20%',
-            left: '-15%',
-            top: '0%',
-            filter: `saturate(8) `,
-            strobe: 'strobe3 0.5s infinite', 
-            shift: 'hueRotate 5s infinite'
+        // doodles: {
+        //     src: `glitches/david/doodles.png`,
+        //     width: '150%',
+        //     height: '100%',
+        //     left: '-25%',
+        //     top: '0%',
+        //     filter: `saturate(8) 
+        //             hue-rotate(90deg)
+        //             invert(1)`,
+        //     strobe: 'strobe2 0.19s infinite', 
+        //     shift: 'hueRotate 1.9s infinite'
+        // },
+    }
+    const ii_dict = {
+        diver: {
+            src: `glitches/araddhya/diver.png`,
+            width: '24%',
+            height: '4%',
+            left: '10%',
+            top: '3%',
+            filter: `saturate(8)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
         },
-        rose: {
-            src: `glitches/mara/rose.png`,
+        eyelashes: {
+            src: `glitches/araddhya/eyelashes.png`,
             width: '30%',
-            height: '20%',
-            left: '85%',
-            top: '10%',
-            filter: `saturate(5)
-                    hue-rotate(280deg)`,
-            strobe: 'strobe1 0.4s infinite', 
-            shift: 'hueRotate 4s infinite'
-        },
-        floater: {
-            src: `glitches/mara/floater.png`,
-            width: '20%',
-            height: '20%',
+            height: '2%',
             left: '60%',
-            top: '80%',
-            filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+            top: '14.5%',
+            filter: `saturate(8)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        pool: {
+            src: `glitches/araddhya/pool.png`,
+            width: '24%',
+            height: '4%',
+            left: '56%',
+            top: '7.8%',
+            filter: `saturate(8)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        spool: {
+            src: `glitches/araddhya/spool.png`,
+            width: '60%',
+            height: '5%',
+            left: '-2%',
+            top: '15%',
+            filter: `saturate(8)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        mashpot: {
+            src: `glitches/araddhya/mashpot.png`,
+            width: '28%',
+            height: '12%',
+            left: '40%',
+            top: '20%',
+            filter: `saturate(8)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        eight: {
+            src: `glitches/araddhya/eight.png`,
+            width: '100%',
+            height: '7%',
+            left: '0%',
+            top: '34%',
+            filter: `saturate(8)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        eyeballs: {
+            src: `glitches/araddhya/eyeballs.png`,
+            width: '20%',
+            height: '5%',
+            left: '75%',
+            top: '45%',
+            filter: `saturate(8)
+                    hue-rotate(180deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        patch: {
+            src: `glitches/araddhya/patch.png`,
+            width: '25%',
+            height: '10%',
+            left: '-6%',
+            top: '48%',
+            filter: `saturate(2)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        planet: {
+            src: `glitches/araddhya/planet.png`,
+            width: '40%',
+            height: '10%',
+            left: '50%',
+            top: '53%',
+            filter: `saturate(2)
+                    hue-rotate(180deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        timer: {
+            src: `glitches/araddhya/timer.png`,
+            width: '40%',
+            height: '12%',
+            left: '-8%',
+            top: '70%',
+            filter: `saturate(2)
+                    hue-rotate(180deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        pointer: {
+            src: `glitches/araddhya/pointer.png`,
+            width: '30%',
+            height: '7%',
+            left: '60%',
+            top: '76%',
+            filter: `saturate(2)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        sortinghat: {
+            src: `glitches/araddhya/sortinghat.png`,
+            width: '27%',
+            height: '4%',
+            left: '65%',
+            top: '87%',
+            filter: `saturate(2)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        spout: {
+            src: `glitches/araddhya/spout.png`,
+            width: '32%',
+            height: '8%',
+            left: '20%',
+            top: '92%',
+            filter: `saturate(2)
+                    hue-rotate(0deg)
+                    invert(0)`,
             strobe: 'strobe2 0.19s infinite', 
             shift: 'hueRotate 1.9s infinite'
         },
     }
-    const ii_dict = {
-        
-    }
     const i_dict = {
-        
+        waterfall: {
+            src: `glitches/david/waterfall.png`,
+            width: '100%',
+            height: '39%',
+            left: '0%',
+            top: '61%',
+            filter: `saturate(1)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        fuckingamazing: {
+            src: `glitches/david/fuckingamazing.png`,
+            width: '100%',
+            height: '20%',
+            left: '0%',
+            top: '30%',
+            filter: `saturate(1)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
+        signature: {
+            src: `glitches/david/signature.png`,
+            width: '30%',
+            height: '2%',
+            left: '2%',
+            top: '57.8%',
+            filter: `saturate(1)
+                    hue-rotate(0deg)
+                    invert(0)`,
+            strobe: 'strobe2 0.19s infinite', 
+            shift: 'hueRotate 1.9s infinite'
+        },
     }
     const visartShort = `<i>The Creature</i> by Carlo Barton`;
     const visartStatement = `Carlo's artist statement will go here.`; 

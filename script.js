@@ -1,4 +1,5 @@
 let pattern = 'strobe', patternIndex = 0; 
+let main = document.querySelector('main');
 const patterns = ['strobe', 'stay', 'shift', 'stop'];
 const dictionaries = {};
 if (typeof i_dict !== 'undefined') {
@@ -18,7 +19,11 @@ let scrollTimeout;
 const glitchButton = document.getElementById('glitch-button');
 if (glitchButton != null){
     newPattern();
+} else {
+    basalGlitches(page_dict, main);
 }
+
+
 
 function newPattern(){
     // UPDATE PATTERN
@@ -33,7 +38,6 @@ function newPattern(){
 
     // BASAL GLITCHES
     // BASAL GLITCHES
-    let main = document.querySelector('main');
     if (typeof page_dict !== 'undefined' && page_dict !== null){
         console.log("not on homepage"); 
         basalGlitches(page_dict, main);
@@ -336,9 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // GLITCH WHEN SCROLL
-    addGlitchScroller();
 
     // AUDIO AUDIO AUDIO
     // AUDIO AUDIO AUDIO
