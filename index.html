@@ -21,6 +21,14 @@
         },
     }
     const glitch_border_dict = {
+        doodles: {
+            src: `glitches/david/doodles.png`,
+            filter: `saturate(5) invert(0) hue-rotate(0deg)`,
+        }, 
+        roses: {
+            src: `glitches/chloea/roses.png`,
+            filter: `saturate(5) invert(0) hue-rotate(0deg)`,
+        }, 
         seashells: {
             src: `glitches/kane/seashells.png`,
             filter: `saturate(5) invert(1) hue-rotate(90deg)`,
@@ -28,6 +36,10 @@
         sapwood: {
             src: `glitches/kane/sapwood.png`,
             filter: `saturate(8)`,
+        }, 
+        waterfall: {
+            src: `glitches/david/waterfall.png`,
+            filter: `saturate(5) invert(0) hue-rotate(0deg)`,
         }, 
     }
     const glitch_box_dict = {
@@ -38,16 +50,18 @@
             top: '10%', 
             left: '10%',
             filter: `saturate(8) 
-                    hue-rotate(270deg)`,
+                    hue-rotate(270deg)
+                    invert(1)`,
         },
-        fuckingamazing: {
-            src: `glitches/david/fuckingamazing.png`,
-            width: '80%',
+        fuckingamazing_narrow: {
+            src: `glitches/david/fuckingamazing_narrow.png`,
+            width: '100%',
             height: '80%',
             top: '10%', 
-            left: '10%',
+            left: '0%',
             filter: `saturate(8) 
-                    hue-rotate(270deg)`,
+                    hue-rotate(140deg)
+                    invert(1)`,
         },
         rose: {
             src: `glitches/mara/rose.png`,
@@ -56,17 +70,46 @@
             top: '5%', 
             left: '15%',
             filter: `saturate(5)
-                    hue-rotate(280deg)`,
+                    hue-rotate(280deg)
+                    invert(1)`,
         },
-        solareye: {
-            src: `glitches/richard/solareye.png`,
+        mashpot: {
+            src: `glitches/araddhya/mashpot.png`,
             width: '80%',
             height: '80%',
-            top: '15%', 
-            left: '15%',
-            filter: `saturate(8) `,
+            top: '10%', 
+            left: '5%',
+            filter: `saturate(5)
+                    hue-rotate(90deg) invert(1)`,
         },
-        
+        spacestation: {
+            src: `glitches/chloea/spacestation.png`,
+            width: '80%',
+            height: '80%',
+            top: '5%', 
+            left: '10%',
+            filter: `saturate(5)
+                    hue-rotate(280deg) invert(1)`,
+        },
+        clock: {
+            src: `glitches/chloea/clock.png`,
+            width: '80%',
+            height: '80%',
+            top: '10%', 
+            left: '10%',
+            filter: `saturate(5)
+                    invert(1)`,
+        },
+        leftmilkyway: {
+            src: `glitches/richard/leftmilkyway.png`,
+            width: '70%',
+            height: '90%',
+            top: '5%', 
+            left: '15%',
+            filter: `saturate(8) 
+                    hue-rotate(90deg)
+                    invert(1)`,
+        },
         floater: {
             src: `glitches/mara/floater.png`,
             width: '80%',
@@ -74,9 +117,9 @@
             top: '8%', 
             left: '12%',
             filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+                    hue-rotate(90deg)
+                    invert(1)`,
         },
-        
         eyes: {
             src: `glitches/mara/eyes.png`,
             width: '80%',
@@ -84,16 +127,8 @@
             top: '12%', 
             left: '8%',
             filter: `saturate(8) 
-                    hue-rotate(90deg)`,
-        },
-        blood: {
-            src: `glitches/mara/blood.png`,
-            width: '40%',
-            height: '40%',
-            top: '35%', 
-            left: '30%',
-            filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+                    hue-rotate(90deg)
+                    invert(1)`,
         },
         ahh: {
             src: `glitches/mara/ahh.png`,
@@ -102,24 +137,27 @@
             top: '30%', 
             left: '15%',
             filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+                    hue-rotate(0deg)
+                    invert(1)`,
         },
-        butterfly: {
-            src: `glitches/mara/butterfly.png`,
+        solareye: {
+            src: `glitches/richard/solareye.png`,
             width: '80%',
             height: '80%',
-            top: '15%', 
-            left: '15%',
-            filter: `saturate(8) `,
+            top: '12%', 
+            left: '10%',
+            filter: `saturate(8) hue-rotate(90deg)
+                invert(1)`,
         },
-        card: {
-            src: `glitches/mara/card.png`,
-            width: '60%',
-            height: '80%',
-            top: '10%', 
-            left: '20%',
+        rightmilkyway: {
+            src: `glitches/richard/rightmilkyway.png`,
+            width: '70%',
+            height: '90%',
+            top: '5%', 
+            left: '15%',
             filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+                    hue-rotate(0deg)
+                    invert(1)`,
         },
         teeth: {
             src: `glitches/kane/teeth.png`,
@@ -128,7 +166,8 @@
             top: '10%', 
             left: '20%',
             filter: `saturate(8) 
-                    hue-rotate(90deg)`,
+                    hue-rotate(90deg)
+                    invert(1)`,
         },
         wizard: {
             src: `glitches/kane/wizard.png`,
@@ -136,8 +175,9 @@
             height: '60%',
             top: '20%', 
             left: '10%',
-            filter: `saturate(1) 
-                    hue-rotate(0deg)`,
+            filter: `saturate(8) 
+                    hue-rotate(0deg)
+                    invert(1)`,
         },
         carcrash: {
             src: `glitches/kane/carcrash.png`,
@@ -146,7 +186,7 @@
             top: '25%', 
             left: '10%',
             filter: `saturate(8) 
-                    hue-rotate(0deg)`,
+                    invert(1)`,
         },
         vial: {
             src: `glitches/home/vial.png`,
