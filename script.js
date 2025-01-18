@@ -143,14 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // SCALING
     function scalePage(){
+        console.log("scaling page"); 
         const vw = window.innerWidth;
         const vh = window.innerHeight;
         const main = document.querySelector('main');
         let scaleFactor = 1;
-        if (1160 >= vw >= 700){
+        if (1160 >= vw && vw >= 700){
             scaleFactor = (vw - 80) / 600;
         } else if (vw >= 1160){
-            scaleFactor = 1.6; 
+            scaleFactor = 1.8; 
         }
         main.style.transform = `scale(${scaleFactor})`;
         main.style.height = `${vh / scaleFactor}px`;
