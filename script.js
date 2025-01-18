@@ -23,8 +23,6 @@ if (glitchButton != null){
     basalGlitches(page_dict, main);
 }
 
-
-
 function newPattern(){
     // UPDATE PATTERN
     patternIndex = (patternIndex + 1) % patterns.length;
@@ -140,6 +138,13 @@ function writtenGlitches(glitch_dict, pdf){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // CLICK SOUND
+    const clickSound = new Audio('/audio/clickSound.mp3'); 
+    document.addEventListener('click', () => {
+        clickSound.currentTime = 0; // reset so starts at beginning
+        clickSound.play(); 
+    });
 
     // SCALING
     function scalePage(){
