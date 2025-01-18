@@ -178,6 +178,11 @@ a {
     right: 0%;
 }
 
+header {
+    position: relative;
+    z-index: 20;
+}
+
 main {
     max-width: 400px;
     margin: 0px 20px;
@@ -294,7 +299,7 @@ footer {
     align-items: center;
     margin: 10px;
     width: 100%;
-    z-index: 9;
+    z-index: 20;
 }
 #cortex {
     margin-right: 20px;
